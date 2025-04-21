@@ -1,5 +1,4 @@
 
-// Methode 2) : 
 
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
