@@ -7,12 +7,11 @@ import {
   Check,
   Users,
   Calendar,
-  Clock,
-  FileText,
+  Clock,  
   Award,
   BarChart,
   Briefcase,
-  ClipboardList,
+
 } from "lucide-react";
 
 const features = [

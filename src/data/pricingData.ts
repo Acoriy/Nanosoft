@@ -1,6 +1,4 @@
 
-import { FaComments } from "react-icons/fa";
-
 export type ServiceCategory = {
   id: string;
   name: string;

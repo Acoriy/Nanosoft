@@ -1,13 +1,10 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
-  Check,
   Code,
   Smartphone,
   Globe,
   Zap,
   Shield,
-  Sparkles,
   Headphones,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -1,6 +1,3 @@
-
-
-
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from "@/components/ui/card";
@@ -83,13 +80,22 @@ const ContactUs = () => {
     setIsSubmitting(true);
     try {
       if (!form.current) throw new Error("Form reference is not set");
+      
+      // --- My Confige : 
+      // const result = await emailjs.sendForm(
+      //   'service_in2loup',
+      //   'template_9mt8ryc',
+      //   form.current,
+      //   { publicKey: 'bYnS8JUIkrD4vRZBu' }
+      // );
 
+      // -- Mohamed Confige :
       const result = await emailjs.sendForm(
-        'service_in2loup',
-        'template_9mt8ryc',
+        'service_w9gtwfo',
+        'template_3c2s94c',
         form.current,
-        { publicKey: 'bYnS8JUIkrD4vRZBu' }
-      );
+        { publicKey: '2S3jnjugx7id4sdfs' }
+      )
 
       if (result.status === 200) {
         toast({

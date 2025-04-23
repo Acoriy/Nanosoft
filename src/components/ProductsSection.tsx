@@ -2,17 +2,13 @@
 
 import React, { useState } from "react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 // Images importées
-import Accounting from "../assets/Dashboards/Accounting UI.bmp";
-import HR from "../assets/Dashboards/HR UI.bmp";
-import PMS from "../assets/Dashboards/PMS UI.bmp";
-import Warehose from "../assets/Dashboards/Warehouse UI.bmp";
+import Accounting from "../assets/Dashboards/Accounting_UI.bmp";
+import HR from "../assets/Dashboards/HR_UI.bmp";
+import PMS from "../assets/Dashboards/PMS_UI.bmp";
+import Warehose from "../assets/Dashboards/Warehouse_UI.bmp";
 
 const ProductSelector: React.FC = () => {
   const [activeTab, setActiveTab] = useState("accounting");

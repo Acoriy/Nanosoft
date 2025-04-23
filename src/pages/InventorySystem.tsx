@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -6,8 +5,6 @@ import PageHeader from "@/components/PageHeader";
 import {
   Check,
   Package,
-  BarChart3,
-  FileText,
   QrCode,
   Truck,
   AlertTriangle,

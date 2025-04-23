@@ -5,7 +5,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdArrowBackIos } from "react-icons/md";
-import { ArrowBigDown } from "lucide-react";
 
 const NewFeaturesSection: React.FC = () => {
   const settings = {

@@ -8,10 +8,8 @@ import {
   CreditCard,
   BarChart3,
   FileText,
-  Users,
   LayoutDashboard,
   LineChart,
-  Settings,
   Receipt,
 } from "lucide-react";
 import { Link } from "react-router-dom";

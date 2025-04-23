@@ -1,8 +1,4 @@
 
-
-
-
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -11,12 +7,11 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getBlogs, Blog } from "@/services/blogService";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const HomeBlogSection: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
-  const isMobile = useIsMobile();
+
 
   useEffect(() => {
     const fetchBlogs = async () => {

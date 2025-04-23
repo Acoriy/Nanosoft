@@ -260,27 +260,6 @@ const TermsAndConditions = () => {
           </motion.div>
         </div>
 
-        {/* Back to Top Button */}
-        {/* <motion.div 
-          className="flex justify-center mt-16"
-          variants={sectionVariants}
-        >
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="bg-nanosoft-primary/10 hover:bg-nanosoft-primary/20 text-nanosoft-primary px-6 py-2 rounded-full flex items-center gap-2 transition-all duration-300 group"
-          >
-            العودة إلى الأعلى
-            <svg 
-              className="w-5 h-5 transform rotate-180 group-hover:-translate-y-1 transition-transform duration-300" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24" 
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </button>
-        </motion.div> */}
       </motion.section>
     </div>
   );

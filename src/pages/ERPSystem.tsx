@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -19,14 +19,9 @@ import {
   CheckCircle2,
   Clock,
   CreditCard,
-  Upload,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getPricesByCategory, Price } from "@/services/priceService";
-import PriceCard from "@/components/PriceCard";
-import { Skeleton } from "@/components/ui/skeleton";
-import { toast } from "sonner";
 import { Link } from "react-router-dom";
 
 // ERP images :
@@ -208,34 +203,8 @@ const ERPSystem = () => {
     loadPrices();
   }, []);
 
-  const handleSelectPlan = (planId: string) => {
-    window.open("http://crm.nanosoft.ly/", "_blank");
-  };
 
-  // const handleImageUpload = (
-  //   event: React.ChangeEvent<HTMLInputElement>,
-  //   index: number
-  // ) => {
-  //   const file = event.target.files?.[0];
-  //   if (!file) return;
 
-  //   if (!file.type.startsWith("image/")) {
-  //     toast.error("يرجى تحميل صورة فقط");
-  //     return;
-  //   }
-
-  //   const reader = new FileReader();
-  //   reader.onload = (e) => {
-  //     const newFeatures = [...customFeatures];
-  //     newFeatures[index] = {
-  //       ...newFeatures[index],
-  //       imageFeatre: e.target?.result as string,
-  //     };
-  //     setCustomFeatures(newFeatures);
-  //     toast.success("تم تحديث الصورة بنجاح");
-  //   };
-  //   reader.readAsDataURL(file);
-  // };
 
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-28  md:pt-32">
@@ -464,19 +433,6 @@ const ERPSystem = () => {
                       </li>
                     ))}
                   </ul>
-
-                  {/* <div className="mt-6 mb-2">
-                    <label className="flex items-center gap-2 cursor-pointer p-2 text-sm text-nanosoft-primary hover:bg-nanosoft-primary/5 rounded-md w-fit">
-                      <Upload className="h-4 w-4" />
-                      <span>تحميل صورة مخصصة</span>
-                      <input
-                        type="file"
-                        accept="image/*"
-                        onChange={(e) => handleImageUpload(e, index)}
-                        className="hidden"
-                      />
-                    </label>
-                  </div> */}
 
                   <Link to="/pricing">
                     <Button className="mt-4 bg-nanosoft-primary hover:bg-nanosoft-primary/90">

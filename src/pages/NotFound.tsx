@@ -1,5 +1,3 @@
-
-import React from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -38,7 +36,6 @@ const NotFound = () => {
           </Button>
         </div>
       </main>
-      {/* <Footer /> */}
     </div>
   );
 };

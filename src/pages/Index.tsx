@@ -1,7 +1,7 @@
 
 
-import React, { useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { IoIosArrowBack } from "react-icons/io";
@@ -38,24 +38,10 @@ const brands = [
 ];
 
 const Index = () => {
-  const [isMobile] = useState(false);
-  const controls = useAnimation();
+
   const [changeIcon, setChangeIcon] = useState(false);
   
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
-  };
 
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0, scale: 0.8 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      transition: { type: "spring", stiffness: 100, damping: 10, duration: 0.6 },
-    },
-  };
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);
 
@@ -350,50 +336,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Features Section
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-1 bg-nanosoft-primary/10 text-nanosoft-primary rounded-full text-sm font-medium mb-4">
-              لماذا تختارنا
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">مميزات NanoSoft</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              نحن نسعى جاهدين لتقديم أفضل الحلول البرمجية التي تلبي احتياجات عملائنا وتتجاوز توقعاتهم.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...Array(6)].map((_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-nanosoft-primary/10 flex items-center justify-center mb-6" aria-hidden="true">
-                  {/* Exemple d'icône (vous pouvez utiliser une icône issue d'une librairie) */}
-                  {/* <svg className="w-8 h-8 text-nanosoft-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-4">أداء عالي وسرعة فائقة</h3>
-                <p className="text-gray-600">
-                  نطور حلولًا مُحسّنة للأداء تعمل بسرعة وكفاءة، مما يوفر تجربة مستخدم سلسة وسريعة.
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Features Section */}
        <section className="py-20 bg-gray-50">

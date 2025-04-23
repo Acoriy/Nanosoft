@@ -22,7 +22,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 
 
-import DashboardImg from "../assets/Dashboards/PMS UI.bmp";
+import DashboardImg from "../assets/Dashboards/PMS_UI.bmp";
 import TeamCollaborationImg from "../assets/ERPSystem/resurece human.jpg"
 import HeroImg from "../assets/HRSystem/magmentHR2.jpg"
 
