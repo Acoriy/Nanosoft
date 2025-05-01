@@ -5,10 +5,10 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 
 // Images importées
-import Accounting from "../assets/Dashboards/Accounting_UI.bmp";
-import HR from "../assets/Dashboards/HR_UI.bmp";
-import PMS from "../assets/Dashboards/PMS_UI.bmp";
-import Warehose from "../assets/Dashboards/Warehouse_UI.bmp";
+import Accounting from "../assets/Dashboards/Accounting_UI.webp";
+import HR from "../assets/Dashboards/HR_UI.webp";
+import PMS from "../assets/Dashboards/PMS_UI.webp";
+import Warehose from "../assets/Dashboards/Warehouse_UI.webp";
 
 const ProductSelector: React.FC = () => {
   const [activeTab, setActiveTab] = useState("accounting");

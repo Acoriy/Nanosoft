@@ -14,16 +14,16 @@ import ProductsSection from "@/components/ProductsSection";
 import LogosSection from "@/components/LogosSection";
 
 // Images et logos
-import systems from "../assets/systheme partenaria.jpg";
-import Customer1 from "../assets/CustomersLogo/Picture1.jpg"; 
-import Customer2 from "../assets/CustomersLogo/Picture2.jpg"; 
-import Customer3 from "../assets/CustomersLogo/Picture3.jpg"; 
-import Customer4 from "../assets/CustomersLogo/Picture4.jpg"; 
-import Customer5 from "../assets/CustomersLogo/Picture5.jpg"; 
-import Customer6 from "../assets/CustomersLogo/Picture6.jpg"; 
-import Customer7 from "../assets/CustomersLogo/Picture7.jpg"; 
-import Customer8 from "../assets/CustomersLogo/Picture8.jpg"; 
-import Customer9 from "../assets/CustomersLogo/Picture9.jpg"; 
+import systems from "../assets/systheme partenaria.webp";
+import Customer1 from "../assets/CustomersLogo/Picture1.webp"; 
+import Customer2 from "../assets/CustomersLogo/Picture2.webp"; 
+import Customer3 from "../assets/CustomersLogo/Picture3.webp"; 
+import Customer4 from "../assets/CustomersLogo/Picture4.webp"; 
+import Customer5 from "../assets/CustomersLogo/Picture5.webp"; 
+import Customer6 from "../assets/CustomersLogo/Picture6.webp"; 
+import Customer7 from "../assets/CustomersLogo/Picture7.webp"; 
+import Customer8 from "../assets/CustomersLogo/Picture8.webp"; 
+import Customer9 from "../assets/CustomersLogo/Picture9.webp"; 
 
 const brands = [
   { src: Customer1, alt: "Microsoft" },

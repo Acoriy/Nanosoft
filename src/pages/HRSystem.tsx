@@ -62,8 +62,8 @@ const benefits = [
   "تعزيز الشفافية في إجراءات الموارد البشرية",
 ];
 
-import HR1 from "../assets/HRSystem/magment.jpg";
-import HR2 from "../assets/HRSystem/magmentHR2.jpg";
+import HR1 from "../assets/HRSystem/magment.webp";
+import HR2 from "../assets/HRSystem/magmentHR2.webp";
 import { Link } from "react-router-dom";
 
 const HRSystem = () => {

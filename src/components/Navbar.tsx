@@ -23,7 +23,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/Logo.webp";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);

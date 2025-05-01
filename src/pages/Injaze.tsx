@@ -17,14 +17,13 @@ import {
   Settings,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 
 
-import DashboardImg from "../assets/Dashboards/PMS_UI.bmp";
-import TeamCollaborationImg from "../assets/ERPSystem/resurece human.jpg"
-import HeroImg from "../assets/HRSystem/magmentHR2.jpg"
+import DashboardImg from "../assets/Dashboards/PMS_UI.webp";
+import TeamCollaborationImg from "../assets/ERPSystem/resurece human.webp"
+import HeroImg from "../assets/HRSystem/magmentHR2.webp"
 
 const features = [
   {

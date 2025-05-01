@@ -11,15 +11,15 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 
 // images :
-import WebDev from "../assets/WebDevService/WebDevOurMethodology.jpg";
+import WebDev from "../assets/WebDevService/WebDevOurMethodology.webp";
 
 // Customer Logos : 
-import Customer1 from "../assets/CustomersLogo/Picture1.jpg"; 
-import Customer2 from "../assets/CustomersLogo/Picture2.jpg"; 
-import Customer3 from "../assets/CustomersLogo/Picture9.jpg"; 
-import Customer4 from "../assets/CustomersLogo/Picture7.jpg"; 
-import Customer5 from "../assets/CustomersLogo/Picture5.jpg"; 
-import Customer6 from "../assets/CustomersLogo/Picture8.jpg"; 
+import Customer1 from "../assets/CustomersLogo/Picture1.webp"; 
+import Customer2 from "../assets/CustomersLogo/Picture2.webp"; 
+import Customer3 from "../assets/CustomersLogo/Picture9.webp"; 
+import Customer4 from "../assets/CustomersLogo/Picture7.webp"; 
+import Customer5 from "../assets/CustomersLogo/Picture5.webp"; 
+import Customer6 from "../assets/CustomersLogo/Picture8.webp"; 
 
 
 const WebDevService = () => {

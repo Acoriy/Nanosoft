@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 // images :
-import Stock from "../assets/InventorySystem/Stock.jpg";
+import Stock from "../assets/InventorySystem/Stock.webp";
 import { Link } from "react-router-dom";
 
 const features = [

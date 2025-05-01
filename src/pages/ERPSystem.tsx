@@ -25,13 +25,13 @@ import { getPricesByCategory, Price } from "@/services/priceService";
 import { Link } from "react-router-dom";
 
 // ERP images :
-import Sales from "../assets/ERPSystem/Sales.jpg";
-import ResurceHuman from "../assets/ERPSystem/resurece human.jpg";
-import Statistiques from "../assets/ERPSystem/Statistiques.jpg";
-import Magasin from "../assets/ERPSystem/magasinier.jpg";
-import Contabilty from "../assets/ERPSystem/contability.jpg";
-import Achats from "../assets/ERPSystem/Achats.jpg";
-import ERP from "../assets/ERPSystem/ERP.jpg";
+import Sales from "../assets/ERPSystem/Sales.webp";
+import ResurceHuman from "../assets/ERPSystem/resurece human.webp";
+import Statistiques from "../assets/ERPSystem/Statistiques.webp";
+import Magasin from "../assets/ERPSystem/magasinier.webp";
+import Contabilty from "../assets/ERPSystem/contability.webp";
+import Achats from "../assets/ERPSystem/Achats.webp";
+import ERP from "../assets/ERPSystem/ERP.webp";
 
 const features = [
   {

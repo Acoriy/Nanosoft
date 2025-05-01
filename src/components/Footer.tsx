@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin } from "lucide-react";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/Logo.webp";
 import { RiArrowUpDoubleLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
