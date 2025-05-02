@@ -32,6 +32,7 @@ import Magasin from "../assets/ERPSystem/magasinier.webp";
 import Contabilty from "../assets/ERPSystem/contability.webp";
 import Achats from "../assets/ERPSystem/Achats.webp";
 import ERP from "../assets/ERPSystem/ERP.webp";
+import ERP_Hero from "../assets/ERPSystem/ERP-Hero.webp";
 
 const features = [
   {
@@ -159,21 +160,18 @@ const testimonials = [
       "نظام ERP من نانوسوفت غيّر طريقة عملنا بالكامل. أصبحت العمليات أكثر كفاءة وانخفضت التكاليف بنسبة 30%.",
     author: "أحمد محمد",
     position: "المدير التنفيذي، شركة الأفق للتجارة",
-    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
   },
   {
     content:
       "ساعدنا النظام على توحيد جميع بياناتنا في مكان واحد مما سهل عملية اتخاذ القرارات وحسّن من أدائنا العام.",
     author: "سارة أحمد",
     position: "مدير العمليات، مجموعة النجاح",
-    logo: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
   },
   {
     content:
       "بفضل نظام إدارة المخزون المتطور، انخفضت نسبة المخزون الراكد بنسبة 40% وتحسنت دقة الجرد بشكل ملحوظ.",
     author: "محمد علي",
     position: "مدير اللوجستيات، شركة الشرق للتوزيع",
-    logo: "https://images.unsplash.com/photo-1549637642-90187f64f420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
   },
 ];
 
@@ -254,7 +252,7 @@ const ERPSystem = () => {
           className="flex-1"
         >
           <img
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            src={ERP_Hero}
             alt="نظام تخطيط موارد المنشأة"
             className="rounded-lg shadow-2xl w-full object-cover h-[400px]"
           />

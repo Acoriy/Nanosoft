@@ -24,6 +24,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import DashboardImg from "../assets/Dashboards/PMS_UI.webp";
 import TeamCollaborationImg from "../assets/ERPSystem/resurece human.webp"
 import HeroImg from "../assets/HRSystem/magmentHR2.webp"
+import Injaze1 from "../assets/Injaze/injaze1.webp";
+import Injaze2 from "../assets/Injaze/injaze2.webp";
+import Injaze3 from "../assets/Injaze/injaze3.webp";
 
 const features = [
   {
@@ -48,7 +51,7 @@ const features = [
       "تتبع حالة التنفيذ والإنجاز للمهام",
       "إضافة ملاحظات ومرفقات على المهام",
     ],
-    image: "https://projectsly.com/images/task-management-system-screenshot-1.png?v=1691124479409199525",
+    image: Injaze1,
   },
   {
     title: "التعاون الفعال",
@@ -72,7 +75,7 @@ const features = [
       "تقارير الإنتاجية والكفاءة الزمنية",
       "حساب تكلفة العمل بناءً على الوقت المستغرق",
     ],
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnUEuhJ9ZbZBA4qoX7l7SSIp19heiE0OLKtA&s",
+    image: Injaze2,
   },
   {
     title: "التقارير والتحليلات",
@@ -84,7 +87,7 @@ const features = [
       "مؤشرات قياس الأداء الرئيسية KPIs",
       "تحليل اتجاهات الإنتاجية والأداء على مدار الوقت",
     ],
-    image: "https://databeat.io/wp-content/uploads/2023/11/Executive-Management-Reporting-IMG.jpg",
+    image: Injaze3,
   },
 ];
 

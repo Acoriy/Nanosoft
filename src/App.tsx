@@ -169,6 +169,7 @@ const App = () => (
                 </>
               }
             />
+        
             <Route
               path="/terms-of-use"
               element={

@@ -52,6 +52,7 @@ const features = [
   },
 ];
 
+
 const benefits = [
   "توفير الوقت وتقليل الأخطاء المحاسبية",
   "زيادة الدقة في التقارير المالية",
@@ -60,6 +61,10 @@ const benefits = [
   "سهولة الوصول للبيانات المالية من أي مكان",
   "تأمين البيانات المالية بأحدث تقنيات الحماية",
 ];
+
+// images :
+import HeroAcounting from "../assets/AcountingImages/AcountingHero.webp";
+import Acounting1 from "../assets/AcountingImages/Acounting1.webp";
 
 const AccountingSystem = () => {
   return (
@@ -106,7 +111,7 @@ const AccountingSystem = () => {
           className="flex-1"
         >
           <img
-            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80"
+            src={HeroAcounting}
             alt="نظام المحاسبة"
             className="rounded-lg shadow-2xl w-full object-cover h-[400px]"
           />
@@ -150,7 +155,7 @@ const AccountingSystem = () => {
         <div className="flex flex-col md:flex-row gap-10 items-center">
           <div className="flex-1">
             <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80"
+              src={Acounting1}
               alt="فوائد النظام المحاسبي"
               className="rounded-lg shadow-xl object-cover h-[400px] w-full"
             />

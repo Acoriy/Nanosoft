@@ -14,6 +14,8 @@ import {
 
 // images :
 import Stock from "../assets/InventorySystem/Stock.webp";
+import MagasingHero from "../assets/InventorySystem/MagsinHero.webp";
+
 import { Link } from "react-router-dom";
 
 const features = [
@@ -110,7 +112,7 @@ const InventorySystem = () => {
           className="flex-1"
         >
           <img
-            src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80"
+            src={MagasingHero}
             alt="نظام إدارة المخزون"
             className="rounded-lg shadow-2xl w-full object-cover h-[400px]"
           />

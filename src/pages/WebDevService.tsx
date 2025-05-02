@@ -12,6 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 // images :
 import WebDev from "../assets/WebDevService/WebDevOurMethodology.webp";
+import HeroDev from "../assets/IndexImages/heroImage.webp";
 
 // Customer Logos : 
 import Customer1 from "../assets/CustomersLogo/Picture1.webp"; 
@@ -147,7 +148,7 @@ const WebDevService = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1050&q=80"
+              src={HeroDev}
               alt="Web Development"
               className="w-full h-auto rounded-xl shadow-2xl object-cover max-h-[500px]"
             />

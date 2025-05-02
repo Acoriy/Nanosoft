@@ -14,7 +14,9 @@ import ProductsSection from "@/components/ProductsSection";
 import LogosSection from "@/components/LogosSection";
 
 // Images et logos
-import systems from "../assets/systheme partenaria.webp";
+import systems from "../assets/IndexImages/systheme partenaria.webp";
+import HeroImage from "../assets/IndexImages/heroImage.webp";
+import ExperiencesImage from "../assets/IndexImages/experiences.webp";
 import Customer1 from "../assets/CustomersLogo/Picture1.webp"; 
 import Customer2 from "../assets/CustomersLogo/Picture2.webp"; 
 import Customer3 from "../assets/CustomersLogo/Picture3.webp"; 
@@ -107,7 +109,7 @@ const Index = () => {
             >
               <div className="w-full h-full absolute top-4 md:top-8 right-4 md:right-8 bg-nanosoft-primary/10 rounded-2xl md:rounded-3xl"></div>
               <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop"
+                src={HeroImage}
                 alt="Software Development"
                 className="rounded-2xl md:rounded-3xl w-full h-auto md:h-[500px] object-cover shadow-xl md:shadow-2xl"
                 loading="lazy"
@@ -258,7 +260,7 @@ const Index = () => {
             >
               <div className="w-full h-full absolute top-8 left-8 bg-nanosoft-primary/10 rounded-3xl"></div>
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
+                src={ExperiencesImage}
                 alt="Our Team"
                 className="rounded-3xl w-full h-[500px] object-cover shadow-2xl relative z-10"
                 loading="lazy"
