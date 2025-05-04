@@ -58,7 +58,7 @@ const Index = () => {
       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
-        image="https://nanosoft-sass.vercel.app/src/assets/LogoNanosSoft.png"
+        image="src/assets/LogoNanosSoft.png"
         url="https://nanosoft-sass.vercel.app"
       />
       {/* Section Hero */}
