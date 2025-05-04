@@ -33,6 +33,9 @@ import Contabilty from "../assets/ERPSystem/contability.webp";
 import Achats from "../assets/ERPSystem/Achats.webp";
 import ERP from "../assets/ERPSystem/ERP.webp";
 import ERP_Hero from "../assets/ERPSystem/ERP-Hero.webp";
+import SEO from "@/components/SEO";
+import ImageOg from "../assets/LogoNanosSoft.png";
+
 
 const features = [
   {
@@ -206,6 +209,13 @@ const ERPSystem = () => {
 
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-28  md:pt-32">
+       {/* Open Graph  */}
+       <SEO
+        title="نانو سوفت - حلول الأنظمة الرقمية"
+        description="نظام متكامل يربط جميع عمليات الأعمال في منصة موحدة لإدارة الشركات والمؤسسات بكفاءة عالية"
+        image={ImageOg}
+        url="https://nanosoft.ly/erp"
+      />
       <PageHeader
         title="نظام تخطيط موارد المؤسسة NanoSoft ERP"
         description="نظام متكامل يربط جميع عمليات الأعمال في منصة موحدة لإدارة الشركات والمؤسسات بكفاءة عالية"

@@ -15,6 +15,8 @@ import {
   AccordionTrigger
 } from "@/components/ui/accordion";
 import emailjs from '@emailjs/browser';
+import SEO from '@/components/SEO';
+import ImageOg from "../assets/LogoNanosSoft.png";
 // import ContactUsImg from "../assets/concatUs.jpg"; // Image facultative
 
 const contactFormSchema = z.object({
@@ -120,6 +122,12 @@ const ContactUs = () => {
 
   return (
     <main className="pt-24 pb-20 bg-gradient-to-b from-white to-gray-50 min-h-screen" lang="ar">
+      <SEO
+              title="نانو سوفت - حلول الأنظمة الرقمية"
+              description="نحن هنا لمساعدتك ودعمك. لا تتردد في التواصل معنا في أي وقت للاستفسار أو طلب المساعدة."
+              image={ImageOg}
+              url="https://nanosoft.ly/contact"
+            />
       <div className="container mx-auto px-4">
         <motion.header
           initial={{ opacity: 0, y: 20 }}

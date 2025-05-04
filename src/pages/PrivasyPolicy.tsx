@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { Separator } from "@/components/ui/separator";
+import SEO from "@/components/SEO";
+import ImageOg from "../assets/LogoNanosSoft.png";
+
 
 const PrivacyPolicy = () => {
   // Animation variants pour les différentes sections
@@ -35,6 +38,13 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="pt-20">
+       {/* Open Graph  */}
+       <SEO
+        title="نانو سوفت - حلول الأنظمة الرقمية"
+        description="سياسة الخصوصية لشركة البرمجيات الدقيقة (نانوسوفت)"
+        image={ImageOg}
+        url="https://nanosoft.ly/privacy-policy"
+      />
       <Helmet>
         <title>سياسة الخصوصية - نانوسوفت</title>
         <meta name="description" content="سياسة الخصوصية لشركة البرمجيات الدقيقة (نانوسوفت) للحلول البرمجية وخدمات تقنية المعلومات" />

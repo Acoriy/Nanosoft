@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import { FileText, Shield, AlertTriangle, ExternalLink, Check, RefreshCw } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import PageHeader from "@/components/PageHeader";
+import SEO from "@/components/SEO";
+import ImageOg from "../assets/LogoNanosSoft.png";
+
 
 const TermsAndConditions = () => {
   // Animation variants
@@ -29,6 +32,13 @@ const TermsAndConditions = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
+       {/* Open Graph  */}
+       <SEO
+        title="نانو سوفت - حلول الأنظمة الرقمية"
+        description="مرحبًا بك في موقع شركة البرمجيات الدقيقة (نانوسوفت) للحلول البرمجية وخدمات تقنية المعلومات. يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام الموقع أو أي من الخدمات والأنظمة والتطبيقات الخاصة بنا. باستخدامك لأي من خدماتنا، فإنك توافق على الالتزام بهذه الشروط."
+        image={ImageOg}
+        url="https://nanosoft.ly/terms-of-use"
+      />
       {/* Hero Section with Parallax Effect */}
       <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-r from-nanosoft-primary/10 to-nanosoft-secondary/10">
         <motion.div 

@@ -22,6 +22,10 @@ import Customer4 from "../assets/CustomersLogo/Picture7.webp";
 import Customer5 from "../assets/CustomersLogo/Picture5.webp"; 
 import Customer6 from "../assets/CustomersLogo/Picture8.webp"; 
 
+import ImageOg from "../assets/LogoNanosSoft.png";
+import SEO from "@/components/SEO";
+
+
 
 const WebDevService = () => {
   const navigate = useNavigate();
@@ -98,6 +102,13 @@ const WebDevService = () => {
 
   return (
     <div className="pt-24  bg-gradient-to-b from-white to-gray-50">
+       {/* Open Graph  */}
+       <SEO
+        title="نانو سوفت - حلول الأنظمة الرقمية"
+        description="فريق من المطورين والمصممين المحترفين لتحويل رؤيتك إلى واقع رقمي يتجاوز توقعاتك"
+        image={ImageOg}
+        url="https://nanosoft.ly/software-development"
+      />
       {/* Hero Section */}
       <section className="container mx-auto px-4 md:px-6 py-8 md:py-16">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
