@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { IoIosArrowBack } from "react-icons/io";
 import { ArrowLeft } from "lucide-react";
+import SEO from "../components/SEO.js";
+import { useParams } from "react-router-dom";
+
 
 // Import des données et assets
 import { serviceCategories } from "../data/pricingData";
@@ -46,11 +49,20 @@ const Index = () => {
 
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);
-
+  // Open Graph : 
+   
   return (
     <main className="min-h-screen overflow-x-hidden" lang="ar">
+      {/* Open Graph  */}
+      <SEO
+        title="نانوسوفت - للحلول البرمجية وتقنية المعلومات"
+        description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
+        image="/src/assets/Logo.webp"
+        type="profile" // Type spécifique pour les profils
+      />
       {/* Section Hero */}
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
+        
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/70 dark:to-gray-900/30"></div>
         <div className="container mx-auto px-4 z-10 py-12 md:py-20">
