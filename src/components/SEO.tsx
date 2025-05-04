@@ -15,8 +15,9 @@ const SEO = ({ title, description, image, url }) => {
       {/* <meta property="og:image" content={image} /> */}
       <meta 
             property="og:image" 
-            content={image || "https://nanosoft-sass.vercel.app/src/assets/LogoNanosSoft.png"} 
-        />
+            // content={image || "https://nanosoft-sass.vercel.app/src/assets/LogoNanosSoft.png"} 
+            content={`https://nanosoft-sass.vercel.app/src/assets/LogoNanosSoft.png?${Date.now()}`} 
+          />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       {/* <meta property="og:image:width" content="1200" />
