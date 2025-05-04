@@ -30,195 +30,199 @@ import TermsAndConditions from "./pages/TermesAndConditions";
 import CyberSecurity from "./components/CyberSecurity";
 import CloudServices from "./components/CloudServices";
 
+import { HelmetProvider } from "react-helmet-async";
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner/>
-      <BrowserRouter>
-        <ScrollToTop />
-        <AnimatePresence mode="wait">
-          <Routes>
-            {/* Pages publiques */}
-            <Route
-              path="/"
-              element={
-                <>
-                  <Navbar />
-                  <Index />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/pricing"
-              element={
-                <>
-                  <Navbar />
-                  <Pricing />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/blog"
-              element={
-                <>
-                  <Navbar />
-                  <Blog />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/blog/:id"
-              element={
-                <>
-                  <Navbar />
-                  <BlogPost />
-                  <Footer />
-                </>
-              }
-            />
+    <HelmetProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <AnimatePresence mode="wait">
+            <Routes>
+              {/* Pages publiques */}
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Navbar />
+                    <Index />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/pricing"
+                element={
+                  <>
+                    <Navbar />
+                    <Pricing />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/blog"
+                element={
+                  <>
+                    <Navbar />
+                    <Blog />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/blog/:id"
+                element={
+                  <>
+                    <Navbar />
+                    <BlogPost />
+                    <Footer />
+                  </>
+                }
+              />
 
-            {/* Page de contact */}
-            <Route
-              path="/contact"
-              element={
-                <>
-                  <Navbar />
-                  <ContactUs />
-                  <Footer />
-                </>
-              }
-            />
+              {/* Page de contact */}
+              <Route
+                path="/contact"
+                element={
+                  <>
+                    <Navbar />
+                    <ContactUs />
+                    <Footer />
+                  </>
+                }
+              />
 
-            {/* New Web Development Service Page */}
-            <Route
-              path="/software-development"
-              element={
-                <>
-                  <Navbar />
-                  <WebDevService />
-                  <Footer />
-                </>
-              }
-            />
+              {/* New Web Development Service Page */}
+              <Route
+                path="/software-development"
+                element={
+                  <>
+                    <Navbar />
+                    <WebDevService />
+                    <Footer />
+                  </>
+                }
+              />
 
-            {/* Nouvelles pages des produits */}
-            <Route
-              path="/accounting"
-              element={
-                <>
-                  <Navbar />
-                  <AccountingSystem />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/inventory"
-              element={
-                <>
-                  <Navbar />
-                  <InventorySystem />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/hr"
-              element={
-                <>
-                  <Navbar />
-                  <HRSystem />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/injaz"
-              element={
-                <>
-                  <Navbar />
-                  <Injaze />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/erp"
-              element={
-                <>
-                  <Navbar />
-                  <ERPSystem />
-                  <Footer />
-                </>
-              }
-            />
+              {/* Nouvelles pages des produits */}
+              <Route
+                path="/accounting"
+                element={
+                  <>
+                    <Navbar />
+                    <AccountingSystem />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/inventory"
+                element={
+                  <>
+                    <Navbar />
+                    <InventorySystem />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/hr"
+                element={
+                  <>
+                    <Navbar />
+                    <HRSystem />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/injaz"
+                element={
+                  <>
+                    <Navbar />
+                    <Injaze />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route
+                path="/erp"
+                element={
+                  <>
+                    <Navbar />
+                    <ERPSystem />
+                    <Footer />
+                  </>
+                }
+              />
 
-            <Route
-              path="/privacy-policy"
-              element={
-                <>
-                  <Navbar />
-                  <PrivacyPolicy />
-                  <Footer />
-                </>
-              }
-            />
-        
-            <Route
-              path="/terms-of-use"
-              element={
-                <>
-                  <Navbar />
-                  <TermsAndConditions />
-                  <Footer />
-                </>
-              }
-            />
+              <Route
+                path="/privacy-policy"
+                element={
+                  <>
+                    <Navbar />
+                    <PrivacyPolicy />
+                    <Footer />
+                  </>
+                }
+              />
 
-            <Route
-              path="/cyber-security"
-              element={
-                <>
-                  <Navbar />
-                  <CyberSecurity />
-                  <Footer />
-                </>
-              }
-            />
+              <Route
+                path="/terms-of-use"
+                element={
+                  <>
+                    <Navbar />
+                    <TermsAndConditions />
+                    <Footer />
+                  </>
+                }
+              />
 
-            <Route
-              path="/cloud-services"
-              element={
-                <>
-                  <Navbar />
-                  <CloudServices />
-                  <Footer />
-                </>
-              }
-            />
+              <Route
+                path="/cyber-security"
+                element={
+                  <>
+                    <Navbar />
+                    <CyberSecurity />
+                    <Footer />
+                  </>
+                }
+              />
 
-            {/* Admin Login */}
-            <Route path="/admin/login" element={<AdminLogin />} />
+              <Route
+                path="/cloud-services"
+                element={
+                  <>
+                    <Navbar />
+                    <CloudServices />
+                    <Footer />
+                  </>
+                }
+              />
 
-            {/* Dashboard Admin */}
-            <Route path="/admin" element={<DashboardLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="blogs" element={<BlogAdmin />} />
-              <Route path="prices" element={<PriceAdmin />} />
-            </Route>
+              {/* Admin Login */}
+              <Route path="/admin/login" element={<AdminLogin />} />
 
-            {/* Catch-all route */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AnimatePresence>
-      </BrowserRouter>
-    </TooltipProvider>
+              {/* Dashboard Admin */}
+              <Route path="/admin" element={<DashboardLayout />}>
+                <Route index element={<Dashboard />} />
+                <Route path="blogs" element={<BlogAdmin />} />
+                <Route path="prices" element={<PriceAdmin />} />
+              </Route>
+
+              {/* Catch-all route */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AnimatePresence>
+        </BrowserRouter>
+      </TooltipProvider>
+    </HelmetProvider>
   </QueryClientProvider>
 );
 

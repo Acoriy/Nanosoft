@@ -42,6 +42,8 @@ const brands = [
   { src: Customer9, alt: "Amazon Web Services" },
 ];
 
+import ImageOg from "../assets/IndexImages/heroImage.webp";
+
 const Index = () => {
 
   const [changeIcon, setChangeIcon] = useState(false);
@@ -49,16 +51,15 @@ const Index = () => {
 
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);
-  // Open Graph : 
-   
+
   return (
     <main className="min-h-screen overflow-x-hidden" lang="ar">
       {/* Open Graph  */}
       <SEO
-        title="نانوسوفت - للحلول البرمجية وتقنية المعلومات"
+        title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
-        image="/src/assets/Logo.webp"
-        type="profile" // Type spécifique pour les profils
+        image={ImageOg}
+        url="https://nanosoft.ly"
       />
       {/* Section Hero */}
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
