@@ -18,18 +18,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { IoAlertCircleSharp } from "react-icons/io5";
-import SEO from "@/components/SEO";
-import ImageOg from "../assets/LogoNanosSoft.png";
 
 const Pricing = () => {
-  const [selectedService, setSelectedService] = useState<string>(
-    serviceCategories[0].id
-  );
+  const [selectedService, setSelectedService] = useState<string>(serviceCategories[0].id);
   const [isChangingService, setIsChangingService] = useState<boolean>(false);
   const [pricePlans, setPricePlans] = useState<Price[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [displayCurrency, setDisplayCurrency] = useState<string>("LYD");
-
+  
   const currentService =
     serviceCategories.find((service) => service.id === selectedService) ||
     serviceCategories[0];
@@ -59,9 +55,7 @@ const Pricing = () => {
 
     loadPrices();
     const unsubscribe = subscribeToPricesUpdates((updatedPrices) => {
-      const filteredPrices = updatedPrices.filter(
-        (p) => p.category === selectedService
-      );
+      const filteredPrices = updatedPrices.filter((p) => p.category === selectedService);
       if (filteredPrices.length > 0) {
         setPricePlans(filteredPrices);
         setIsLoading(false);
@@ -104,12 +98,6 @@ const Pricing = () => {
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* <SEO
-        title="نانو سوفت - حلول الأنظمة الرقمية"
-        description="نقدم مجموعة متنوعة من الباقات المصممة لتلبية احتياجات مختلف الأعمال، من الشركات الناشئة إلى المؤسسات الكبيرة."
-        image={ImageOg}
-        url="https://nanosoft.ly/pricing"
-      /> */}
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -148,13 +136,10 @@ const Pricing = () => {
           </div>
           <div className="w-48 mx-auto pt-5">
             <h1 className="text-xl text-center pb-2 flex flex-row items-center justify-center gap-2 ">
-              <IoAlertCircleSharp className="text-nanosoft-primary" />
-              محول العملات
+              <IoAlertCircleSharp className="text-nanosoft-primary"/>
+              محول العملات 
             </h1>
-            <Select
-              onValueChange={setDisplayCurrency}
-              defaultValue={displayCurrency}
-            >
+            <Select onValueChange={setDisplayCurrency} defaultValue={displayCurrency}>
               <SelectTrigger className="w-full text-right">
                 <SelectValue placeholder="اختر العملة" />
               </SelectTrigger>
