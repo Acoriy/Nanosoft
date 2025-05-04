@@ -59,7 +59,7 @@ const Index = () => {
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         image="src/assets/LogoNanosSoft.png"
-        url="https://nanosoft-sass.vercel.app/"
+        url="https://nanosoft-sass.vercel.app"
       />
       {/* Section Hero */}
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
