@@ -12,11 +12,11 @@ const SEO = ({ title, description, image, url }) => {
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      {/* <meta 
+      {/* <meta property="og:image" content={image} /> */}
+      <meta 
             property="og:image" 
-            content={image || "/src/assets/LogoNanosSoft.png"} 
-        /> */}
+            content={image || "https://nanosoft-sass.vercel.app/src/assets/LogoNanosSoft.png"} 
+        />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       {/* <meta property="og:image:width" content="1200" />
