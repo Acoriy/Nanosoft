@@ -42,7 +42,7 @@ const brands = [
   { src: Customer9, alt: "Amazon Web Services" },
 ];
 
-import ImageOg from "../assets/IndexImages/heroImage.webp";
+import ImageOg from "../assets/LogoNanosSoft.png";
 
 const Index = () => {
 
@@ -58,7 +58,7 @@ const Index = () => {
       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
-        image="/src/assets/LogoNanosSoft.png"
+        image={ImageOg}
         url="https://nanosoft.ly"
       />
       {/* Section Hero */}
