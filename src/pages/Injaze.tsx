@@ -28,8 +28,8 @@ import Injaze1 from "../assets/Injaze/injaze1.webp";
 import Injaze2 from "../assets/Injaze/injaze2.webp";
 import Injaze3 from "../assets/Injaze/injaze3.webp";
 
-import ImageOg from "../assets/LogoNanosSoft.png";
-import SEO from "@/components/SEO";
+// import ImageOg from "../assets/LogoNanosSoft.png";
+// import SEO from "@/components/SEO";
 
 
 const features = [
@@ -154,12 +154,12 @@ const Injaze = () => {
       <Navbar />
       <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-28 md:pt-32">
        {/* Open Graph  */}
-       <SEO
+       {/* <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="منصة شاملة تمكنك من إدارة المشاريع وتتبع المهام وتنسيق عمل الفريق بكفاءة عالية، مما يساعد على إنجاز الأعمال في الوقت المحدد وضمن الميزانية المخططة."
         image={ImageOg}
         url="https://nanosoft.ly/injaz"
-      />
+      /> */}
         {/* Hero Section */}
         <div className="flex flex-col md:flex-row items-center gap-10 my-16">
           <motion.div

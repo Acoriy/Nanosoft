@@ -17,8 +17,9 @@ import Stock from "../assets/InventorySystem/Stock.webp";
 import MagasingHero from "../assets/InventorySystem/MagsinHero.webp";
 
 import { Link } from "react-router-dom";
-import SEO from "@/components/SEO";
-import ImageOg from "../assets/LogoNanosSoft.png";
+
+// import SEO from "@/components/SEO";
+// import ImageOg from "../assets/LogoNanosSoft.png";
 
 
 const features = [
@@ -73,12 +74,12 @@ const InventorySystem = () => {
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-28  md:pt-32">
        {/* Open Graph  */}
-       <SEO
+       {/* <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="نظام إدارة متكامل للمخزون والمستودعات مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
         image={ImageOg}
         url="https://nanosoft.ly/inventory"
-      />
+      /> */}
       <PageHeader
         title="برنامج إدارة المخزون والمستودعات"
         description="نظام إدارة متكامل للمخزون والمستودعات مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"

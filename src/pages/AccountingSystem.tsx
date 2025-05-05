@@ -65,20 +65,20 @@ const benefits = [
 // images :
 import HeroAcounting from "../assets/AcountingImages/AcountingHero.webp";
 import Acounting1 from "../assets/AcountingImages/Acounting1.webp";
-import SEO from "@/components/SEO";
-import ImageOg from "../assets/LogoNanosSoft.png";
+// import SEO from "@/components/SEO";
+// import ImageOg from "../assets/LogoNanosSoft.png";
 
 
 const AccountingSystem = () => {
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-28  md:pt-32">
        {/* Open Graph  */}
-            <SEO
+            {/* <SEO
               title="نانو سوفت - حلول الأنظمة الرقمية"
               description="نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
               image={ImageOg}
               url="https://nanosoft.ly/accounting"
-            />
+            /> */}
       <PageHeader
         title="برنامج محاسبة متكامل لإدارة الشركات"
         description="نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
