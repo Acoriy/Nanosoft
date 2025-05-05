@@ -16,13 +16,7 @@ import { toast } from "sonner";
 
 // Configuration Firebase
 const firebaseConfig = {
-  // apiKey: "AIzaSyAE8dYheJ0hIB3c4sYQgev0tASjWNMtufI",
-  // authDomain: "nanosoft-website.firebaseapp.com",
-  // projectId: "nanosoft-website",
-  // storageBucket: "nanosoft-website.firebasestorage.app",
-  // messagingSenderId: "675136646663",
-  // appId: "1:675136646663:web:ef2b16a8f2c18ef33d44a2",
-  // measurementId: "G-YYF4FL80Z3"
+  
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
