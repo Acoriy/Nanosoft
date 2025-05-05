@@ -201,19 +201,13 @@ import { initializeApp } from 'firebase/app';
 import { 
   getFirestore, 
   enableIndexedDbPersistence, 
-  connectFirestoreEmulator,
   collection,
   getDocs,
   query,
   limit,
-  getDoc,
-  doc,
-  setDoc,
-  writeBatch,
-  serverTimestamp,
   onSnapshot
 } from 'firebase/firestore';
-import { getStorage, connectStorageEmulator } from 'firebase/storage';
+import { getStorage } from 'firebase/storage';
 import { getAnalytics } from 'firebase/analytics';
 import { toast } from 'sonner';
 
