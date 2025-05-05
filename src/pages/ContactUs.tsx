@@ -1,5 +1,5 @@
-import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,20 +12,26 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
+  AccordionTrigger,
 } from "@/components/ui/accordion";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
-// import SEO from '@/components/SEO';
-// import ImageOg from "../assets/LogoNanosSoft.png";
+import SEO from "../components/SEO";
+import ImageOg from "../assets/LogoNanosSoft.png";
 // import ContactUsImg from "../assets/concatUs.jpg"; // Image facultative
 
 const contactFormSchema = z.object({
   name: z.string().min(3, { message: "الاسم يجب أن يكون 3 أحرف على الأقل" }),
   email: z.string().email({ message: "يرجى إدخال بريد إلكتروني صحيح" }),
-  phone: z.string().min(8, { message: "رقم الهاتف يجب أن يكون 8 أرقام على الأقل" }),
-  subject: z.string().min(5, { message: "الموضوع يجب أن يكون 5 أحرف على الأقل" }),
-  message: z.string().min(10, { message: "الرسالة يجب أن تكون 10 أحرف على الأقل" }),
+  phone: z
+    .string()
+    .min(8, { message: "رقم الهاتف يجب أن يكون 8 أرقام على الأقل" }),
+  subject: z
+    .string()
+    .min(5, { message: "الموضوع يجب أن يكون 5 أحرف على الأقل" }),
+  message: z
+    .string()
+    .min(10, { message: "الرسالة يجب أن تكون 10 أحرف على الأقل" }),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
@@ -43,7 +49,9 @@ const ContactUs = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useRef<HTMLFormElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof ContactFormData]) {
@@ -83,8 +91,8 @@ const ContactUs = () => {
     setIsSubmitting(true);
     try {
       if (!form.current) throw new Error("Form reference is not set");
-      
-      // --- My Confige : 
+
+      // --- My Confige :
       // const result = await emailjs.sendForm(
       //   'service_in2loup',
       //   'template_9mt8ryc',
@@ -94,18 +102,24 @@ const ContactUs = () => {
 
       // -- Mohamed Confige :
       const result = await emailjs.sendForm(
-        'service_w9gtwfo',
-        'template_3c2s94c',
+        "service_w9gtwfo",
+        "template_3c2s94c",
         form.current,
-        { publicKey: '2S3jnjugx7id4sdfs' }
-      )
+        { publicKey: "2S3jnjugx7id4sdfs" }
+      );
 
       if (result.status === 200) {
         toast({
           title: "تم إرسال الرسالة بنجاح",
           description: "شكراً لتواصلك معنا، سنرد عليك في أقرب وقت ممكن.",
         });
-        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
       } else {
         throw new Error("Failed to send email");
       }
@@ -113,7 +127,8 @@ const ContactUs = () => {
       console.error("Error sending message:", error);
       toast({
         title: "خطأ في إرسال الرسالة",
-        description: "حدث خطأ أثناء محاولة إرسال رسالتك. يرجى المحاولة مرة أخرى لاحقًا.",
+        description:
+          "حدث خطأ أثناء محاولة إرسال رسالتك. يرجى المحاولة مرة أخرى لاحقًا.",
         variant: "destructive",
       });
     } finally {
@@ -122,13 +137,16 @@ const ContactUs = () => {
   };
 
   return (
-    <main className="pt-24 pb-20 bg-gradient-to-b from-white to-gray-50 min-h-screen" lang="ar">
-      {/* <SEO
-              title="نانو سوفت - حلول الأنظمة الرقمية"
-              description="نحن هنا لمساعدتك ودعمك. لا تتردد في التواصل معنا في أي وقت للاستفسار أو طلب المساعدة."
-              image={ImageOg}
-              url="https://nanosoft.ly/contact"
-            /> */}
+    <main
+      className="pt-24 pb-20 bg-gradient-to-b from-white to-gray-50 min-h-screen"
+      lang="ar"
+    >
+      <SEO
+        title="نانو سوفت - حلول الأنظمة الرقمية"
+        description="نحن هنا لمساعدتك ودعمك. لا تتردد في التواصل معنا في أي وقت للاستفسار أو طلب المساعدة."
+        image={ImageOg}
+        url="https://nanosoft.ly/contact"
+      />
       <div className="container mx-auto px-4">
         <motion.header
           initial={{ opacity: 0, y: 20 }}
@@ -141,7 +159,8 @@ const ContactUs = () => {
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">تواصل معنا</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            نحن هنا لمساعدتك ودعمك. لا تتردد في التواصل معنا في أي وقت للاستفسار أو طلب المساعدة.
+            نحن هنا لمساعدتك ودعمك. لا تتردد في التواصل معنا في أي وقت للاستفسار
+            أو طلب المساعدة.
           </p>
         </motion.header>
 
@@ -165,7 +184,10 @@ const ContactUs = () => {
             <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4 space-x-reverse">
-                  <div className="bg-nanosoft-primary/10 p-3 rounded-full" aria-hidden="true">
+                  <div
+                    className="bg-nanosoft-primary/10 p-3 rounded-full"
+                    aria-hidden="true"
+                  >
                     <Phone className="h-6 w-6 text-nanosoft-primary" />
                   </div>
                   <div className="text-right">
@@ -179,11 +201,16 @@ const ContactUs = () => {
             <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4 space-x-reverse">
-                  <div className="bg-nanosoft-primary/10 p-3 rounded-full" aria-hidden="true">
+                  <div
+                    className="bg-nanosoft-primary/10 p-3 rounded-full"
+                    aria-hidden="true"
+                  >
                     <Mail className="h-6 w-6 text-nanosoft-primary" />
                   </div>
                   <div className="text-right">
-                    <h3 className="font-bold text-lg mb-2">البريد الإلكتروني</h3>
+                    <h3 className="font-bold text-lg mb-2">
+                      البريد الإلكتروني
+                    </h3>
                     <p className="text-gray-600">info@nanosoft.ly</p>
                   </div>
                 </div>
@@ -193,12 +220,17 @@ const ContactUs = () => {
             <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4 space-x-reverse">
-                  <div className="bg-nanosoft-primary/10 p-3 rounded-full" aria-hidden="true">
+                  <div
+                    className="bg-nanosoft-primary/10 p-3 rounded-full"
+                    aria-hidden="true"
+                  >
                     <Clock className="h-6 w-6 text-nanosoft-primary" />
                   </div>
                   <div className="text-right">
                     <h3 className="font-bold text-lg mb-2">ساعات العمل</h3>
-                    <p className="text-gray-600 mb-1">السبت - الخميس: 9:00 ص - 5:00 م</p>
+                    <p className="text-gray-600 mb-1">
+                      السبت - الخميس: 9:00 ص - 5:00 م
+                    </p>
                     <p className="text-gray-600">الجمعة: مغلق</p>
                   </div>
                 </div>
@@ -216,7 +248,10 @@ const ContactUs = () => {
           >
             <Card className="overflow-hidden border-none shadow-lg">
               <CardContent className="p-8">
-                <h2 id="contact-form-title" className="text-2xl font-bold mb-6 text-right">
+                <h2
+                  id="contact-form-title"
+                  className="text-2xl font-bold mb-6 text-right"
+                >
                   أرسل لنا رسالة
                 </h2>
                 <form ref={form} onSubmit={sendEmail} className="space-y-6">
@@ -235,13 +270,16 @@ const ContactUs = () => {
                         aria-required="true"
                       />
                       {errors.name && (
-                        <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.name}
+                        </p>
                       )}
                     </div>
 
                     <div className="space-y-2 text-right">
                       <Label htmlFor="email" className="block text-gray-700">
-                        البريد الإلكتروني <span className="text-red-500">*</span>
+                        البريد الإلكتروني{" "}
+                        <span className="text-red-500">*</span>
                       </Label>
                       <Input
                         id="email"
@@ -254,7 +292,9 @@ const ContactUs = () => {
                         aria-required="true"
                       />
                       {errors.email && (
-                        <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.email}
+                        </p>
                       )}
                     </div>
 
@@ -272,7 +312,9 @@ const ContactUs = () => {
                         aria-required="true"
                       />
                       {errors.phone && (
-                        <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.phone}
+                        </p>
                       )}
                     </div>
 
@@ -290,7 +332,9 @@ const ContactUs = () => {
                         aria-required="true"
                       />
                       {errors.subject && (
-                        <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
+                        <p className="text-red-500 text-sm mt-1">
+                          {errors.subject}
+                        </p>
                       )}
                     </div>
                   </div>
@@ -310,13 +354,15 @@ const ContactUs = () => {
                       aria-required="true"
                     />
                     {errors.message && (
-                      <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.message}
+                      </p>
                     )}
                   </div>
 
                   <div className="text-right">
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       className="bg-nanosoft-primary hover:bg-nanosoft-secondary text-white px-8 py-2 rounded-lg transition-colors flex items-center justify-center"
                       disabled={isSubmitting}
                       aria-label="إرسال الرسالة"
@@ -343,41 +389,47 @@ const ContactUs = () => {
           className="mt-16 max-w-3xl mx-auto"
           aria-label="الأسئلة المتكررة"
         >
-          <h2 className="text-2xl font-bold mb-8 text-center">الأسئلة المتكررة</h2>
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            الأسئلة المتكررة
+          </h2>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-b">
               <AccordionTrigger className="text-lg font-semibold py-4 text-right">
                 ما هي مدة الرد على الاستفسارات؟
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 text-right pb-4">
-                عادة ما نرد على جميع الاستفسارات خلال 24 ساعة من تلقيها خلال أيام العمل.
+                عادة ما نرد على جميع الاستفسارات خلال 24 ساعة من تلقيها خلال
+                أيام العمل.
               </AccordionContent>
             </AccordionItem>
-            
+
             <AccordionItem value="item-2" className="border-b">
               <AccordionTrigger className="text-lg font-semibold py-4 text-right">
                 هل تقدمون خدمات الدعم الفني المستمر؟
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 text-right pb-4">
-                نعم، نقدم خدمات الدعم الفني المستمر لجميع عملائنا، وذلك ضمن باقات الدعم المختلفة التي نوفرها.
+                نعم، نقدم خدمات الدعم الفني المستمر لجميع عملائنا، وذلك ضمن
+                باقات الدعم المختلفة التي نوفرها.
               </AccordionContent>
             </AccordionItem>
-            
+
             <AccordionItem value="item-3" className="border-b">
               <AccordionTrigger className="text-lg font-semibold py-4 text-right">
                 كيف يمكنني طلب عرض سعر للخدمات؟
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 text-right pb-4">
-                يمكنك طلب عرض سعر من خلال ملء نموذج الاتصال أعلاه، أو عبر الاتصال المباشر.
+                يمكنك طلب عرض سعر من خلال ملء نموذج الاتصال أعلاه، أو عبر
+                الاتصال المباشر.
               </AccordionContent>
             </AccordionItem>
-            
+
             <AccordionItem value="item-4" className="border-b">
               <AccordionTrigger className="text-lg font-semibold py-4 text-right">
                 هل تقدمون خدمات خارج ليبيا؟
               </AccordionTrigger>
               <AccordionContent className="text-gray-600 text-right pb-4">
-                نعم، نقدم خدماتنا لعملاء من جميع أنحاء العالم، ولدينا القدرة على العمل عن بُعد ودعمهم على مدار الساعة.
+                نعم، نقدم خدماتنا لعملاء من جميع أنحاء العالم، ولدينا القدرة على
+                العمل عن بُعد ودعمهم على مدار الساعة.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

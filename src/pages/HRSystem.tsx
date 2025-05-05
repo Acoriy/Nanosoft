@@ -64,19 +64,20 @@ const benefits = [
 import HR1 from "../assets/HRSystem/magment.webp";
 import HR2 from "../assets/HRSystem/magmentHR2.webp";
 import { Link } from "react-router-dom";
-// import SEO from "@/components/SEO";
-// import ImageOg from "../assets/LogoNanosSoft.png";
+
+import SEO from "../components/SEO";
+import ImageOg from "../assets/LogoNanosSoft.png";
 
 const HRSystem = () => {
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8  pt-28  md:pt-32">
        {/* Open Graph  */}
-       {/* <SEO
+       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="نظام متكامل لإدارة الموارد البشرية مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
         image={ImageOg}
         url="https://nanosoft.ly/hr"
-      /> */}
+      />
       <PageHeader
         title="برنامج إدارة شؤون الموظفين والموارد البشرية"
         description="نظام متكامل لإدارة الموارد البشرية مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"

@@ -30,7 +30,7 @@ import TermsAndConditions from "./pages/TermesAndConditions";
 import CyberSecurity from "./components/CyberSecurity";
 import CloudServices from "./components/CloudServices";
 
-// import { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
 
 const queryClient = new QueryClient();
 
@@ -39,7 +39,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* <HelmetProvider> */}
+      <HelmetProvider>
         <BrowserRouter>
           <ScrollToTop />
           <AnimatePresence mode="wait">
@@ -221,7 +221,7 @@ const App = () => (
             </Routes>
           </AnimatePresence>
         </BrowserRouter>
-      {/* </HelmetProvider> */}
+      </HelmetProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
