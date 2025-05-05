@@ -18,8 +18,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { IoAlertCircleSharp } from "react-icons/io5";
-import SEO from "@/components/SEO";
-import ImageOg from "../assets/LogoNanosSoft.png";
+
+// import SEO from "@/components/SEO";
+// import ImageOg from "../assets/LogoNanosSoft.png";
 
 const Pricing = () => {
   const [selectedService, setSelectedService] = useState<string>(
@@ -104,12 +105,12 @@ const Pricing = () => {
 
   return (
     <div className="pt-24 pb-20 min-h-screen bg-gradient-to-b from-white to-gray-50">
-      <SEO 
+      {/* <SEO 
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="نقدم مجموعة متنوعة من الباقات المصممة لتلبية احتياجات مختلف الأعمال، من الشركات الناشئة إلى المؤسسات الكبيرة."
         image={ImageOg}
         url="https://nanosoft.ly/pricing"
-      />
+      /> */}
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
