@@ -36,10 +36,10 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <HelmetProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <HelmetProvider>
         <BrowserRouter>
           <ScrollToTop />
           <AnimatePresence mode="wait">
@@ -221,8 +221,8 @@ const App = () => (
             </Routes>
           </AnimatePresence>
         </BrowserRouter>
-      </TooltipProvider>
-    </HelmetProvider>
+      </HelmetProvider>
+    </TooltipProvider>
   </QueryClientProvider>
 );
 

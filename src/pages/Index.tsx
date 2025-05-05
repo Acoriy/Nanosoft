@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 import { IoIosArrowBack } from "react-icons/io";
 import { ArrowLeft } from "lucide-react";
-import SEO from "../components/SEO.js";
-import { useParams } from "react-router-dom";
+// import SEO from "../components/SEO.js";
+// import { useParams } from "react-router-dom";
 
 
 // Import des données et assets
@@ -42,7 +42,7 @@ const brands = [
   { src: Customer9, alt: "Amazon Web Services" },
 ];
 
-import ImageOg from "../assets/LogoNanosSoft.png";
+// import ImageOg from "../assets/LogoNanosSoft.png";
 
 const Index = () => {
 
@@ -55,12 +55,12 @@ const Index = () => {
   return (
     <main className="min-h-screen overflow-x-hidden" lang="ar">
       {/* Open Graph  */}
-      <SEO
+      {/* <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         image={ImageOg}
         url="https://nanosoft.ly"
-      />
+      /> */}
       {/* Section Hero */}
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
         
