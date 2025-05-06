@@ -31,6 +31,7 @@ import Customer6 from "../assets/CustomersLogo/Picture6.webp";
 import Customer7 from "../assets/CustomersLogo/Picture7.webp"; 
 import Customer8 from "../assets/CustomersLogo/Picture8.webp"; 
 import Customer9 from "../assets/CustomersLogo/Picture9.webp"; 
+import SchemaMarkup from "@/components/SchemaMatkup.js";
 
 const brands = [
   { src: Customer1, alt: "Microsoft" },
@@ -63,6 +64,31 @@ const Index = () => {
         image={ImageOg}
         url="https://nanosoft.ly"
       />
+
+      {/* Schema.org */}
+
+      <SchemaMarkup schema={{
+        "@type": "Organization",
+        "name": "نانو سوفت  nanosoft",
+        "url": "https://nanosoft.ly",
+        "logo": "src/assets/LogoNanosSoft.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+218 918889193",
+          "contactType": "خدمة العملاء"
+        }
+      }} />
+
+      <SchemaMarkup schema={{
+        "@type": "WebSite",
+        "url": "https://nanosoft.ly",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://nanosoft.ly/blog",
+          "query-input": "required name=نانو سوفت nanosoft"
+        }
+      }} />
+
       {/* Section Hero */}
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
         
