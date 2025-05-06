@@ -67,6 +67,73 @@ import { Link } from "react-router-dom";
 
 import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
+import SchemaMarkup from "@/components/SchemaMatkup";
+
+// schema.org :
+
+const hrSchema = {
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "نظام إدارة الموارد البشرية NanoSoft HR",
+      "description": "نظام متكامل لإدارة شؤون الموظفين والموارد البشرية بكفاءة عالية مع مراعاة الخصوصية المحلية",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "softwareVersion": "2.1.4",
+      "featureList": features.map(f => f.title),
+      "screenshot": {
+        "@type": "ImageObject",
+        "url": "https://nanosoft.ly/hr",
+        "width": 1200,
+        "height": 630
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "LYD",
+        "lowPrice": "300",
+        "highPrice": "3000",
+        "offerCount": "3",
+        "url": "https://nanosoft.ly/hr"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "bestRating": "5",
+        "ratingCount": "76"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "نانو سوفت",
+      "url": "https://nanosoft.ly",
+      // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+      "sameAs": [
+        "https://facebook.com/nanosoft",
+        "https://linkedin.com/company/nanosoft"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Libya"
+      },
+      "knowsLanguage": "ar",
+      "foundingDate": "2020"
+    },
+    {
+      "@type": "WebPage",
+      "name": "صفحة نظام الموارد البشرية - نانو سوفت",
+      "description": "نظام متكامل لإدارة كافة جوانب الموارد البشرية وإدارة شؤون الموظفين",
+      "mainContentOfPage": {
+        "@type": "WebPageElement",
+        "cssSelector": ".container"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        // "url": `${process.env.VITE_SITE_URL}${HR1}`
+      }
+    }
+  ]
+};
+
 
 const HRSystem = () => {
   return (
@@ -76,8 +143,13 @@ const HRSystem = () => {
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="نظام متكامل لإدارة الموارد البشرية مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
         image={ImageOg}
+        category="HR Software"
         url="https://nanosoft.ly/hr"
       />
+
+      {/* Open Graph */}
+      <SchemaMarkup schema={hrSchema} />
+
       <PageHeader
         title="برنامج إدارة شؤون الموظفين والموارد البشرية"
         description="نظام متكامل لإدارة الموارد البشرية مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"

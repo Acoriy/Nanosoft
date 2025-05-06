@@ -24,6 +24,7 @@ import Customer6 from "../assets/CustomersLogo/Picture8.webp";
 
 import ImageOg from "../assets/LogoNanosSoft.png";
 import SEO from "../components/SEO";
+import SchemaMarkup from "@/components/SchemaMatkup";
 
 
 
@@ -100,6 +101,83 @@ const WebDevService = () => {
     Customer6,
   ];
 
+  // schema.org : 
+  const webDevSchema = {
+    "@graph": [
+      {
+        "@type": "Service",
+        "serviceType": "Développement Web",
+        "name": "خدمات تطوير المواقع والتطبيقات - نانو سوفت",
+        "description": "حلول متكاملة لتطوير المواقع الإلكترونية والتطبيقات الجوالة مع أحدث التقنيات",
+        "provider": {
+          "@type": "Organization",
+          "name": "نانو سوفت"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Libya"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "باقات التطوير",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "تطوير مواقع الويب",
+              "description": "تصميم وتطوير مواقع ويب احترافية متجاوبة",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "priceCurrency": "LYD",
+                "price": "1000-10000"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "تطبيقات الجوال",
+              "description": "تطوير تطبيقات أندرويد و iOS مخصصة",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "priceCurrency": "LYD",
+                "price": "5000-30000"
+              }
+            }
+          ]
+        },
+        // "image": `${process.env.VITE_SITE_URL}${HeroDev}`
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Libya"
+        },
+        "knowsLanguage": "ar",
+        "foundingDate": "2020"
+      },
+      {
+        "@type": "WebPage",
+        "name": "صفحة خدمات التطوير - نانو سوفت",
+        "description": "خدمات متكاملة لتطوير المواقع الإلكترونية والتطبيقات الذكية",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".container"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          // "url": `${process.env.VITE_SITE_URL}${HeroDev}`
+        }
+      }
+    ]
+  };
+  
+
   return (
     <div className="pt-24  bg-gradient-to-b from-white to-gray-50">
        {/* Open Graph  */}
@@ -107,8 +185,13 @@ const WebDevService = () => {
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="فريق من المطورين والمصممين المحترفين لتحويل رؤيتك إلى واقع رقمي يتجاوز توقعاتك"
         image={ImageOg}
+        category="Development Services"
         url="https://nanosoft.ly/software-development"
       />
+
+      {/* Schema.org */}
+      <SchemaMarkup schema={webDevSchema} />
+
       {/* Hero Section */}
       <section className="container mx-auto px-4 md:px-6 py-8 md:py-16">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">

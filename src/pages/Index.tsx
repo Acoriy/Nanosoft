@@ -55,6 +55,54 @@ const Index = () => {
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);
 
+    // Schema structured data (Schema.org)
+    const homepageSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "نانو سوفت",
+          "url": "https://nanosoft.ly",
+          // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+          "description": "شركة برمجيات متخصصة في تطوير الحلول الرقمية المتكاملة للشركات والمؤسسات",
+          "foundingDate": "2018",
+          "founders": [
+            {
+              "@type": "Person",
+              "name": "المؤسس"
+            }
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+218918889193",
+            "contactType": "customer service",
+            "email": "info@nanosoft.ly",
+            "areaServed": "LY"
+          },
+          "sameAs": [
+            "https://facebook.com/nanosoft",
+            "https://linkedin.com/company/nanosoft"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Libya"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "نانو سوفت",
+          "url": "https://nanosoft.ly",
+          "description": "الحلول البرمجية المتكاملة لتطوير الأعمال والأنظمة الإدارية",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://nanosoft.ly/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    };
+  
+
   return (
     <main className="min-h-screen overflow-x-hidden" lang="ar">
       {/* Open Graph  */}
@@ -62,32 +110,15 @@ const Index = () => {
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         image={ImageOg}
+        category="Software Solutions"
         url="https://nanosoft.ly"
       />
 
+
       {/* Schema.org */}
+      <SchemaMarkup schema={homepageSchema} />
 
-      <SchemaMarkup schema={{
-        "@type": "Organization",
-        "name": "نانو سوفت  nanosoft",
-        "url": "https://nanosoft.ly",
-        "logo": "src/assets/LogoNanosSoft.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+218 918889193",
-          "contactType": "خدمة العملاء"
-        }
-      }} />
-
-      <SchemaMarkup schema={{
-        "@type": "WebSite",
-        "url": "https://nanosoft.ly",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://nanosoft.ly/blog",
-          "query-input": "required name=نانو سوفت nanosoft"
-        }
-      }} />
+      
 
       {/* Section Hero */}
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">

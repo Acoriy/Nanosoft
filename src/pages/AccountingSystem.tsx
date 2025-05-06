@@ -67,9 +67,74 @@ import HeroAcounting from "../assets/AcountingImages/AcountingHero.webp";
 import Acounting1 from "../assets/AcountingImages/Acounting1.webp";
 import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
+import SchemaMarkup from "@/components/SchemaMatkup";
+
+
 
 
 const AccountingSystem = () => {
+
+  // schema.org :
+  const accountingSchema = {
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "برنامج محاسبة متكامل لإدارة الشركات - نانو سوفت",
+        "description": "نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "softwareHelp": "https://nanosoft.ly/support",
+        "featureList": features.map(f => f.title),
+        "screenshot": {
+          "@type": "ImageObject",
+          // "url": `${window.location.origin}${HeroAcounting}`,
+          "width": 1200,
+          "height": 630
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "LYD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://nanosoft.ly/pricing"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5",
+          "ratingCount": "237"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${window.location.origin}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+218-21-1234567",
+          "contactType": "الدعم الفني",
+          "areaServed": "LY",
+          "availableLanguage": "ar"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://nanosoft.ly",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://nanosoft.ly/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  };
+
+  
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-28  md:pt-32">
        {/* Open Graph  */}
@@ -77,8 +142,13 @@ const AccountingSystem = () => {
               title="نانو سوفت - حلول الأنظمة الرقمية"
               description="نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
               image={ImageOg}
+              category="Software"
               url="https://nanosoft.ly/accounting"
             />
+        {/* Schema.org */}
+
+        <SchemaMarkup schema={accountingSchema} />
+
       <PageHeader
         title="برنامج محاسبة متكامل لإدارة الشركات"
         description="نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"

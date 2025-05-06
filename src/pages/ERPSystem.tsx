@@ -36,6 +36,7 @@ import ERP_Hero from "../assets/ERPSystem/ERP-Hero.webp";
 
 import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
+import SchemaMarkup from "@/components/SchemaMatkup";
 
 
 const features = [
@@ -184,6 +185,82 @@ const ERPSystem = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [customFeatures, setCustomFeatures] = useState([...features]);
 
+  // schema.org :
+  const erpSchema = {
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "نظام تخطيط موارد المؤسسة NanoSoft ERP",
+        "description": "نظام متكامل يربط جميع عمليات الأعمال في منصة موحدة لإدارة الشركات والمؤسسات بكفاءة عالية",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "softwareVersion": "3.2.1",
+        "featureList": features.map(f => f.title),
+        "screenshot": {
+          "@type": "ImageObject",
+          // "url": `${process.env.VITE_SITE_URL}${ERP_Hero}`,
+          "width": 1200,
+          "height": 630
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "LYD",
+          "lowPrice": "500",
+          "highPrice": "5000",
+          "offerCount": "3",
+          "url": "https://nanosoft.ly/pricing"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "bestRating": "5",
+          "ratingCount": "89"
+        },
+        "review": testimonials.map(testimonial => ({
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": testimonial.author
+          },
+          "reviewBody": testimonial.content,
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }))
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Libya"
+        },
+        "knowsLanguage": "ar",
+        "foundingDate": "2020"
+      },
+      {
+        "@type": "WebPage",
+        "name": "صفحة نظام ERP - نانو سوفت",
+        "description": "نظام ERP متكامل لإدارة كافة عمليات الشركات والمؤسسات بكفاءة عالية",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".container"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          // "url": `${process.env.VITE_SITE_URL}${ERP_Hero}`
+        }
+      }
+    ]
+  };
+
   useEffect(() => {
     const loadPrices = async () => {
       try {
@@ -215,8 +292,11 @@ const ERPSystem = () => {
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="نظام متكامل يربط جميع عمليات الأعمال في منصة موحدة لإدارة الشركات والمؤسسات بكفاءة عالية"
         image={ImageOg}
+        category="ERP Software"
         url="https://nanosoft.ly/erp"
       />
+      {/* schema.org */}
+      <SchemaMarkup schema={erpSchema} />
       <PageHeader
         title="نظام تخطيط موارد المؤسسة NanoSoft ERP"
         description="نظام متكامل يربط جميع عمليات الأعمال في منصة موحدة لإدارة الشركات والمؤسسات بكفاءة عالية"

@@ -30,6 +30,7 @@ import Injaze3 from "../assets/Injaze/injaze3.webp";
 
 import ImageOg from "../assets/LogoNanosSoft.png";
 import SEO from "../components/SEO";
+import SchemaMarkup from "@/components/SchemaMatkup";
 
 
 const features = [
@@ -149,6 +150,80 @@ const testimonials = [
 const Injaze = () => {
   const [activeTab, setActiveTab] = useState("projects");
 
+
+  const injazeSchema = {
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "نظام إدارة المشاريع إنجاز NanoSoft Injaze",
+        "description": "منصة متكاملة لإدارة المشاريع والمهام وتتبع الأداء مع واجهة عربية سهلة الاستخدام",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "softwareVersion": "4.0.2",
+        "featureList": features.map(f => f.title),
+        "screenshot": {
+          "@type": "ImageObject",
+          "width": 1200,
+          "height": 630
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "LYD",
+          "lowPrice": "400",
+          "highPrice": "4500",
+          "offerCount": "3",
+          "url": "https://nanosoft.ly/pricing"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "bestRating": "5",
+          "ratingCount": "112"
+        },
+        "review": testimonials.map(testimonial => ({
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": testimonial.author
+          },
+          "reviewBody": testimonial.content,
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          }
+        }))
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Libya"
+        },
+        "knowsLanguage": "ar",
+        "foundingDate": "2020"
+      },
+      {
+        "@type": "WebPage",
+        "name": "صفحة نظام إنجاز - نانو سوفت",
+        "description": "نظام متكامل لإدارة المشاريع والمهام مع تتبع الوقت وتحليل الأداء",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".container"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          // "url": `${process.env.VITE_SITE_URL}${Injaze1}`
+        }
+      }
+    ]
+  };
   return (
     <>
       <Navbar />
@@ -158,8 +233,13 @@ const Injaze = () => {
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="منصة شاملة تمكنك من إدارة المشاريع وتتبع المهام وتنسيق عمل الفريق بكفاءة عالية، مما يساعد على إنجاز الأعمال في الوقت المحدد وضمن الميزانية المخططة."
         image={ImageOg}
+        category="Project Management Software"
         url="https://nanosoft.ly/injaz"
       />
+
+      {/* Schema.org */}
+      <SchemaMarkup schema={injazeSchema} />
+
         {/* Hero Section */}
         <div className="flex flex-col md:flex-row items-center gap-10 my-16">
           <motion.div

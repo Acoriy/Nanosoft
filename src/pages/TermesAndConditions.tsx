@@ -5,6 +5,7 @@ import PageHeader from "@/components/PageHeader";
 
 import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
+import SchemaMarkup from "@/components/SchemaMatkup";
 
 
 const TermsAndConditions = () => {
@@ -31,6 +32,45 @@ const TermsAndConditions = () => {
     }
   };
 
+  // Schema.org :
+  const termsSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "الشروط والأحكام - نانو سوفت",
+        "description": "الشروط والأحكام الرسمية لاستخدام خدمات شركة نانوسوفت",
+        "datePublished": "2023-01-01",
+        "publisher": {
+          "@type": "Organization",
+          "name": "نانو سوفت",
+          // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+          "url": "https://nanosoft.ly"
+        },
+        "accessibilityFeature": "alternativeText",
+        "inLanguage": "ar",
+        "typicalAgeRange": "18-",
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@nanosoft.ly",
+          "contactType": "customer service"
+        }
+      }
+    ]
+  };
+
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 pt-20">
        {/* Open Graph  */}
@@ -38,8 +78,12 @@ const TermsAndConditions = () => {
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="مرحبًا بك في موقع شركة البرمجيات الدقيقة (نانوسوفت) للحلول البرمجية وخدمات تقنية المعلومات. يرجى قراءة هذه الشروط والأحكام بعناية قبل استخدام الموقع أو أي من الخدمات والأنظمة والتطبيقات الخاصة بنا. باستخدامك لأي من خدماتنا، فإنك توافق على الالتزام بهذه الشروط."
         image={ImageOg}
+        category="Legal"
         url="https://nanosoft.ly/terms-of-use"
       />
+      {/* Schema.org */}
+      <SchemaMarkup schema={termsSchema} />
+
       {/* Hero Section with Parallax Effect */}
       <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-r from-nanosoft-primary/10 to-nanosoft-secondary/10">
         <motion.div 

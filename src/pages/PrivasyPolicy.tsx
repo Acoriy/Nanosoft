@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 
 import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
+import SchemaMarkup from "@/components/SchemaMatkup";
 
 
 const PrivacyPolicy = () => {
@@ -36,6 +37,47 @@ const PrivacyPolicy = () => {
       transition: { duration: 0.4, ease: "easeOut" }
     }
   };
+    // Schema structured data (schema.org)
+    const privacySchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CreativeWork",
+          "name": "سياسة الخصوصية - نانوسوفت",
+          "description": "السياسة الرسمية لمعالجة البيانات وحماية الخصوصية في شركة نانوسوفت",
+          "datePublished": "2023-01-01",
+          "dateModified": new Date().toISOString(),
+          "publisher": {
+            "@type": "Organization",
+            "name": "نانو سوفت",
+            // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+            "url": "https://nanosoft.ly"
+          },
+          "accessibilityFeature": ["alternativeText", "structuredHeaders"],
+          "accessibilityHazard": "none",
+          "accessibilitySummary": "هذا المستند مكتوب بلغة عربية واضحة ومقسم إلى أقسام منظمة",
+          "inLanguage": "ar",
+          "copyrightYear": 2023
+        },
+        {
+          "@type": "Organization",
+          "name": "نانو سوفت",
+          "url": "https://nanosoft.ly",
+          // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+          "sameAs": [
+            "https://facebook.com/nanosoft",
+            "https://linkedin.com/company/nanosoft"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@nanosoft.ly",
+            "contactType": "customer service",
+            "telephone": "+218918889193"
+          }
+        }
+      ]
+    };
+  
 
   return (
     <div className="pt-20">
@@ -44,8 +86,12 @@ const PrivacyPolicy = () => {
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="سياسة الخصوصية لشركة البرمجيات الدقيقة (نانوسوفت)"
         image={ImageOg}
+        category="Legal"
         url="https://nanosoft.ly/privacy-policy"
       />
+      {/* Schema.org */}
+      <SchemaMarkup schema={privacySchema} />
+
       <Helmet>
         <title>سياسة الخصوصية - نانوسوفت</title>
         <meta name="description" content="سياسة الخصوصية لشركة البرمجيات الدقيقة (نانوسوفت) للحلول البرمجية وخدمات تقنية المعلومات" />

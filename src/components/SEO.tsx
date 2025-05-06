@@ -2,7 +2,7 @@
 
 import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ title, description, image, url }) => {
+const SEO = ({ title, description, image, url , category }) => {
   return (
     <Helmet>
       {/* Balises standards */}
@@ -12,6 +12,14 @@ const SEO = ({ title, description, image, url }) => {
       {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+
+      <meta property="business:contact_data:locality" content="طرابلس" />
+      <meta property="business:contact_data:region" content="ليبيا" />
+      <meta property="business:contact_data:phone_number" content="+218918889193" />
+      <meta property="business:contact_data:email" content="info@nanosoft.ly" />
+      <meta property="business:contact_data:website" content="https://nanosoft.ly" />
+      <meta property="business:product:category" content={category} />
+
       {/* <meta property="og:image" content={image} /> */}
       <meta 
             property="og:image" 

@@ -18,6 +18,7 @@ import emailjs from "@emailjs/browser";
 
 import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
+import SchemaMarkup from "@/components/SchemaMatkup";
 // import ContactUsImg from "../assets/concatUs.jpg"; // Image facultative
 
 const contactFormSchema = z.object({
@@ -136,17 +137,110 @@ const ContactUs = () => {
     }
   };
 
+  //  schema.org :
+  const contactSchema = {
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+218-918889193",
+          "contactType": "الدعم الفني",
+          "email": "info@nanosoft.ly",
+          "areaServed": "LY",
+          "availableLanguage": "ar",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "https://schema.org/Monday",
+              "https://schema.org/Tuesday",
+              "https://schema.org/Wednesday",
+              "https://schema.org/Thursday",
+              "https://schema.org/Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        },
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "شارع الثورة",
+          "addressLocality": "طرابلس",
+          "addressRegion": "ليبيا",
+          "postalCode": "00218",
+          "addressCountry": "LY"
+        }
+      },
+      {
+        "@type": "ContactPage",
+        "name": "صفحة الاتصال - نانو سوفت",
+        "description": "نحن هنا لمساعدتك ودعمك. لا تتردد في التواصل معنا في أي وقت للاستفسار أو طلب المساعدة.",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": "#contact-form-title"
+        },
+        "relatedLink": [
+          "https://nanosoft.ly/pricing",
+          "https://nanosoft.ly/about"
+        ]
+      },
+      {
+        "@type": "QAPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "ما هي مدة الرد على الاستفسارات؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "عادة ما نرد على جميع الاستفسارات خلال 24 ساعة من تلقيها خلال أيام العمل."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل تقدمون خدمات الدعم الفني المستمر؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، نقدم خدمات الدعم الفني المستمر لجميع عملائنا، وذلك ضمن باقات الدعم المختلفة التي نوفرها."
+            }
+          }
+        ],
+        "potentialAction": {
+          "@type": "CommunicateAction",
+          "name": "إرسال رسالة",
+          "url": "https://nanosoft.ly/contact",
+          "expectsAcceptanceOf": {
+            "@type": "Offer",
+            "name": "استجابة خلال 24 ساعة"
+          }
+        }
+      }
+    ]
+  };
+  
   return (
     <main
       className="pt-24 pb-20 bg-gradient-to-b from-white to-gray-50 min-h-screen"
       lang="ar"
     >
+       {/* open graph */}
       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="نحن هنا لمساعدتك ودعمك. لا تتردد في التواصل معنا في أي وقت للاستفسار أو طلب المساعدة."
         image={ImageOg}
+        category="contact"
         url="https://nanosoft.ly/contact"
       />
+      {/* schema.org */}
+      <SchemaMarkup schema={contactSchema} />
+
+
       <div className="container mx-auto px-4">
         <motion.header
           initial={{ opacity: 0, y: 20 }}

@@ -21,6 +21,7 @@ import { IoAlertCircleSharp } from "react-icons/io5";
 
 import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
+import SchemaMarkup from "@/components/SchemaMatkup";
 
 const Pricing = () => {
   const [selectedService, setSelectedService] = useState<string>(
@@ -103,15 +104,75 @@ const Pricing = () => {
     },
   };
 
+  // Schema.org :
+  const pricingSchema = {
+    "@graph": [
+      {
+        "@type": "ItemList",
+        "itemListElement": serviceCategories.map((service, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "Product",
+            "name": `نظام ${service.name} - نانو سوفت`,
+            "description": service.description,
+            "category": "برمجيات الأعمال",
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "LYD",
+              "lowPrice": "300",
+              "highPrice": "5000",
+              "offerCount": "3"
+            }
+          }
+        }))
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Libya"
+        },
+        "knowsLanguage": "ar",
+        "foundingDate": "2020"
+      },
+      {
+        "@type": "WebPage",
+        "name": "صفحة الأسعار - نانو سوفت",
+        "description": "عروض أسعار وأنظمة إدارة الأعمال المتكاملة للشركات والمؤسسات",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".container"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          // "url": `${process.env.VITE_SITE_URL}${ImageOg}`
+        }
+      }
+    ]
+  };
+  
   return (
     <div className="pt-24 pb-20 min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
+        {/* Opan Graph */}
       <SEO 
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="نقدم مجموعة متنوعة من الباقات المصممة لتلبية احتياجات مختلف الأعمال، من الشركات الناشئة إلى المؤسسات الكبيرة."
         image={ImageOg}
+        category="Software Solutions"
         url="https://nanosoft.ly/pricing"
       />
+
+      {/* Schema.org */}
+      <SchemaMarkup schema={pricingSchema} />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

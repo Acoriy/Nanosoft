@@ -14,6 +14,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import PageHeader from "@/components/PageHeader";
 import { Link } from "react-router-dom";
 
+
+import ImageOg from "../assets/LogoNanosSoft.png";
+import SEO from "./SEO";
+import SchemaMarkup from "./SchemaMatkup";
+
 const CloudServices = () => {
   // Animation variants
   const containerVariants = {
@@ -36,8 +41,89 @@ const CloudServices = () => {
     },
   };
 
+  // Schema.org : 
+  const cloudSchema = {
+    "@graph": [
+      {
+        "@type": "Service",
+        "serviceType": "Cloud Computing Services",
+        "name": "خدمات الحوسبة السحابية - نانو سوفت",
+        "description": "حلول سحابية متكاملة تجمع بين المرونة والأمان والأداء العالي لتلبية احتياجات الأعمال",
+        "provider": {
+          "@type": "Organization",
+          "name": "نانو سوفت",
+          // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "البنية التحتية كخدمة (IaaS)",
+            "description": "موارد حوسبة افتراضية عالية الأداء مع مرونة كاملة",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "LYD",
+              "price": "500-5000"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "المنصة كخدمة (PaaS)",
+            "description": "بيئة تطوير وتشغيل متكاملة للتطبيقات",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "LYD",
+              "price": "1000-10000"
+            }
+          }
+        ],
+        // "image": `${process.env.VITE_SITE_URL}${ImageOg}`
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Libya"
+        },
+        "knowsLanguage": "ar",
+        "foundingDate": "2020"
+      },
+      {
+        "@type": "WebPage",
+        "name": "خدمات السحابة - نانو سوفت",
+        "description": "حلول سحابية متكاملة لإدارة البنية التحتية والتطبيقات",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".container"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          // "url": `${process.env.VITE_SITE_URL}${ImageOg}`
+        }
+      }
+    ]
+  };
+  
+
   return (
     <div className="pt-20">
+      {/* Open Graph */}
+      <SEO
+        title="نانو سوفت - خدمات الحوسبة السحابية"
+        description="حلول سحابية متكاملة تجمع بين المرونة والأمان والأداء العالي لتلبية احتياجات أعمالك"
+        image={ImageOg}
+        category="Cloud Computing Services"
+        url="https://nanosoft.ly/cloud-services"
+      />
+      {/* Schema.org */}
+      <SchemaMarkup schema={cloudSchema} />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-custom-green-1 via-custom-green-2 to-custom-green-4 opacity-90"></div>

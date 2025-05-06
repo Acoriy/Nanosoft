@@ -7,6 +7,10 @@ import debounce from 'lodash.debounce';
 import { getBlogs } from '@/services/blogService';
 import { Skeleton } from "@/components/ui/skeleton";
 
+import ImageOg from "../assets/LogoNanosSoft.png";
+import SEO from '@/components/SEO';
+import SchemaMarkup from '@/components/SchemaMatkup';
+
 const Blog = () => {
   // États pour les articles, le chargement, la recherche, la catégorie sélectionnée et les catégories existantes
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -78,9 +82,69 @@ const Blog = () => {
     debouncedSetSearchQuery(e.target.value);
   };
 
+  // Schema.org : 
+  const blogSchema = {
+    "@graph": [
+      {
+        "@type": "Blog",
+        "name": "مدونة نانو سوفت",
+        "description": "أحدث المقالات والأخبار التقنية في مجال البرمجة وإدارة الأعمال والتسويق الرقمي",
+        "publisher": {
+          "@type": "Organization",
+          "name": "نانو سوفت",
+          // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`
+        },
+        "blogPost": [] // Serait rempli dynamiquement avec les articles
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Libya"
+        },
+        "knowsLanguage": "ar",
+        "foundingDate": "2020"
+      },
+      {
+        "@type": "WebPage",
+        "name": "المدونة - نانو سوفت",
+        "description": "مصدرك الأول للمعرفة التقنية وأحدث التطورات في عالم التكنولوجيا",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".container"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          // "url": `${process.env.VITE_SITE_URL}${ImageOg}`
+        }
+      }
+    ]
+  };
+  
+
   return (
     // Balise <main> avec attribut lang pour améliorer le SEO et l’accessibilité
     <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-24 pb-20" lang="ar">
+      {/* Open Gaph  */}
+      <SEO
+        title="مدونة نانو سوفت - آخر المقالات التقنية"
+        description="اطلع على أحدث الموضوعات في عالم التكنولوجيا والبرمجة والتسويق الرقمي"
+        image={ImageOg}
+        category="المحتوى التعليمي"
+        url="https://nanosoft.ly/blog"
+      />
+      
+      {/* Schema.org */}
+      <SchemaMarkup schema={blogSchema} />
+
+
       <div className="container mx-auto px-4">
         {/* En-tête de page */}
         <motion.div

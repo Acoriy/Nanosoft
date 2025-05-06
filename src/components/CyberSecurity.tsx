@@ -14,6 +14,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
+import ImageOg from "../assets/LogoNanosSoft.png";
+import SEO from "./SEO";
+import SchemaMarkup from "./SchemaMatkup";
+
+
+
 const CyberSecurity = () => {
   // Variantes pour l’animation en cascade
   const containerVariants = {
@@ -26,8 +32,90 @@ const CyberSecurity = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
+  // Schema.org 
+  const cybersecuritySchema = {
+    "@graph": [
+      {
+        "@type": "Service",
+        "serviceType": "Cybersecurity Services",
+        "name": "خدمات الأمن السيبراني - نانو سوفت",
+        "description": "حلول متكاملة لحماية البيانات والشبكات من التهديدات الإلكترونية",
+        "provider": {
+          "@type": "Organization",
+          "name": "نانو سوفت",
+          // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "تقييم المخاطر الأمنية",
+            "description": "تحليل شامل للثغرات الأمنية وتحديد نقاط الضعف",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "LYD",
+              "price": "1000-5000"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "حماية البيانات والتشفير",
+            "description": "تقنيات التشفير المتقدمة لحماية المعلومات الحساسة",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "LYD",
+              "price": "2000-10000"
+            }
+          }
+        ],
+        // "image": `${process.env.VITE_SITE_URL}${ImageOg}`
+      },
+      {
+        "@type": "Organization",
+        "name": "نانو سوفت",
+        "url": "https://nanosoft.ly",
+        // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
+        "sameAs": [
+          "https://facebook.com/nanosoft",
+          "https://linkedin.com/company/nanosoft"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Libya"
+        },
+        "knowsLanguage": "ar",
+        "foundingDate": "2020"
+      },
+      {
+        "@type": "WebPage",
+        "name": "خدمات الأمن السيبراني - نانو سوفت",
+        "description": "حلول أمنية متكاملة لحماية البنية التحتية الرقمية",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".container"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          // "url": `${process.env.VITE_SITE_URL}${ImageOg}`
+        }
+      }
+    ]
+  };
+  
+
   return (
     <main className="pt-20">
+      {/* Open Graph */}
+      <SEO
+        title="نانو سوفت - خدمات الأمن السيبراني"
+        description="حلول متكاملة لحماية بياناتك ومنشأتك من المخاطر الإلكترونية مع أحدث التقنيات الأمنية"
+        image={ImageOg}
+        category="Cybersecurity Services"
+        url="https://nanosoft.ly/cybersecurity"
+      />
+
+      {/* Schema.org */}
+      <SchemaMarkup schema={cybersecuritySchema} />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden" aria-labelledby="cybersecurity-hero">
         <div className="absolute inset-0 bg-gradient-to-tr from-nanosoft-primary via-nanosoft-secondary to-nanosoft-accent opacity-90" aria-hidden="true"></div>
