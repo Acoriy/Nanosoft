@@ -8,7 +8,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { ArrowLeft } from "lucide-react";
 
 import SEO from "../components/SEO.js";
-import ImageOg from "../assets/LogoNanosSoft.png";
+// import ImageOg from "../assets/LogoNanosSoft.png";
 
 
 
@@ -52,6 +52,8 @@ const Index = () => {
 
   const [changeIcon, setChangeIcon] = useState(false);
   
+  // SEO 
+  const ImageOg = "https://nanosoft.ly/LogoNanosSoft.png?w=1200&h=630&fit=crop";
 
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);

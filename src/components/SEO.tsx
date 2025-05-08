@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 const SEO = ({ title, description, image, url, category }) => {
+  
   return (
     <Helmet>
       {/* Balises standards */}
@@ -27,9 +28,10 @@ const SEO = ({ title, description, image, url, category }) => {
       {/* <meta property="og:image" content={image} /> */}
       <meta
         property="og:image"
-        content={image || "src/assets/LogoNanosSoft.png"}
+        content={image || "https://nanosoft.ly/src/assets/LogoNanosSoft.png"}
       />
       <meta property="og:url" content={url} />
+      
       <meta property="og:type" content="website" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
