@@ -1,8 +1,6 @@
+import { Helmet } from "react-helmet-async";
 
-
-import { Helmet } from 'react-helmet-async';
-
-const SEO = ({ title, description, image, url , category }) => {
+const SEO = ({ title, description, image, url, category }) => {
   return (
     <Helmet>
       {/* Balises standards */}
@@ -15,20 +13,27 @@ const SEO = ({ title, description, image, url , category }) => {
 
       <meta property="business:contact_data:locality" content="طرابلس" />
       <meta property="business:contact_data:region" content="ليبيا" />
-      <meta property="business:contact_data:phone_number" content="+218918889193" />
+      <meta
+        property="business:contact_data:phone_number"
+        content="+218918889193"
+      />
       <meta property="business:contact_data:email" content="info@nanosoft.ly" />
-      <meta property="business:contact_data:website" content="https://nanosoft.ly" />
+      <meta
+        property="business:contact_data:website"
+        content="https://nanosoft.ly"
+      />
       <meta property="business:product:category" content={category} />
 
       {/* <meta property="og:image" content={image} /> */}
-      <meta 
-            property="og:image" 
-            content={image || "src/assets/LogoNanosSoft.png"} 
-          />
+      <meta
+        property="og:image"
+        content={image || "src/assets/LogoNanosSoft.png"}
+      />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
-      {/* <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" /> */}
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/png" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

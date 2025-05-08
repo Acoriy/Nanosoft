@@ -12,6 +12,8 @@ import SEO from "../components/SEO.js";
 
 
 
+
+
 // Import des données et assets
 import { serviceCategories } from "../data/pricingData";
 import ProductsSection from "@/components/ProductsSection";
@@ -102,6 +104,7 @@ const Index = () => {
       ]
     };
   
+    const ImageOg = `${process.env.VITE_SITE_URL}/LogoNanosSoft.png`;
 
   return (
     <main className="min-h-screen overflow-x-hidden" lang="ar">
@@ -109,7 +112,7 @@ const Index = () => {
       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
-        image="src/assets/LogoNanosSoft.png"
+        image={ImageOg}
         category="Software Solutions"
         url="https://nanosoft.ly"
       />
