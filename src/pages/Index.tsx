@@ -8,8 +8,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { ArrowLeft } from "lucide-react";
 
 import SEO from "../components/SEO.js";
-// import ImageOg from "../assets/LogoNanosSoft.png";
-
+import ImageOg from "../assets/LogoNanosSoft.png";
 
 
 
@@ -47,7 +46,7 @@ const brands = [
   { src: Customer9, alt: "Amazon Web Services" },
 ];
 
-// import ImageOg from "../assets/LogoNanosSoft.png";
+
 
 const Index = () => {
 
@@ -104,7 +103,6 @@ const Index = () => {
       ]
     };
   
-    const ImageOg = `${process.env.VITE_SITE_URL}/LogoNanosSoft.png`;
 
   return (
     <main className="min-h-screen overflow-x-hidden" lang="ar">
