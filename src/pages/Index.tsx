@@ -8,7 +8,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { ArrowLeft } from "lucide-react";
 
 import SEO from "../components/SEO.js";
-import ImageOg from "../assets/LogoNanosSoft.png";
+// import ImageOg from "../assets/LogoNanosSoft.png";
 
 
 
@@ -109,7 +109,7 @@ const Index = () => {
       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
-        image={ImageOg}
+        image="src/assets/LogoNanosSoft.png"
         category="Software Solutions"
         url="https://nanosoft.ly"
       />
