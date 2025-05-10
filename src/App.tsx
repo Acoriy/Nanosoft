@@ -471,7 +471,7 @@ const App = () => (
               <Route
                 path="/admin/login"
                 element={
-                  <Suspense fallback={<div>Chargement de l'admin...</div>}>
+                  <Suspense fallback={<div>جاري تحميل لوحة المعلومات...</div>}>
                     <AdminLogin />
                   </Suspense>
                 }
@@ -480,7 +480,7 @@ const App = () => (
               <Route
                 path="/admin"
                 element={
-                  <Suspense fallback={<div>Chargement du dashboard...</div>}>
+                  <Suspense fallback={<div>جاري تحميل لوحة المعلومات...</div>}>
                     <DashboardLayout />
                   </Suspense>
                 }
