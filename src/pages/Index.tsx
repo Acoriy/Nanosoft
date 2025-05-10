@@ -101,7 +101,7 @@ const Index = () => {
       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
-        image={`${ImageOg}?v=1.2`}
+        image={ImageOg}
         category="Software Solutions"
         url="https://nanosoft.ly"
       />
