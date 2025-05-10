@@ -304,6 +304,7 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const BlogAdmin = lazy(() => import("./pages/admin/BlogAdmin"));
 const PriceAdmin = lazy(() => import("./pages/admin/PriceAdmin"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Loading =   lazy(()=>import("./components/Loading"))
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -387,6 +388,8 @@ const App = () => (
                 }
               />
 
+              
+
               <Route
                 path="/hr"
                 element={
@@ -455,23 +458,24 @@ const App = () => (
               />
 
               <Route
-                path="/blog/:id"
-                element={
-                  <>
-                    <MainLayout>
-                      <Suspense>
-                        <BlogPost />
+                 path="/blog/:id"
+                 element={
+                   <>
+                     <MainLayout>
+                    <Suspense>
+                     <BlogPost />
                       </Suspense>
-                    </MainLayout>
-                  </>
-                }
-              />
+                  </MainLayout>
+                     
+                   </>
+                 }
+               />
 
               {/* Routes admin séparées sans layout commun */}
               <Route
                 path="/admin/login"
                 element={
-                  <Suspense fallback={<div>جاري تحميل لوحة المعلومات...</div>}>
+                  <Suspense fallback={<Loading/>}>
                     <AdminLogin />
                   </Suspense>
                 }
@@ -480,7 +484,7 @@ const App = () => (
               <Route
                 path="/admin"
                 element={
-                  <Suspense fallback={<div>جاري تحميل لوحة المعلومات...</div>}>
+                  <Suspense fallback={<Loading/>}>
                     <DashboardLayout />
                   </Suspense>
                 }
