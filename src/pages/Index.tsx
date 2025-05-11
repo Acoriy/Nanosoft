@@ -116,7 +116,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/70 dark:to-gray-900/30"></div>
-        <div className="container mx-auto px-4 z-10 py-12 md:py-20 w-auto">
+        <div className="container mx-auto px-4 z-10 py-12 md:py-20 w-auto h-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text Content */}
             <motion.div
@@ -175,7 +175,7 @@ const Index = () => {
               <img
                 src={HeroImage}
                 alt="Software Development"
-                className="rounded-2xl md:rounded-3xl w-full h-auto [230px] md:h-[450px] object-cover shadow-xl md:shadow-2xl"
+                className="rounded-2xl md:rounded-3xl w-auto h-auto [230px] md:h-[450px] object-cover shadow-xl md:shadow-2xl "
                 loading="lazy"
               />
               {/* Quality Badge */}
