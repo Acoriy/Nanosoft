@@ -116,7 +116,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/70 dark:to-gray-900/30"></div>
-        <div className="container mx-auto px-4 z-10 py-12 md:py-20">
+        <div className="container mx-auto px-4 z-10 py-12 md:py-20 w-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text Content */}
             <motion.div
