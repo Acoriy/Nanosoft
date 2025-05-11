@@ -470,29 +470,32 @@ const Index = () => {
                 </div>
               </div>
               {/* <LinkScroll
-                to="services"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className="inline-flex items-center hover:cursor-pointer px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors"
-                aria-label="تعرف على خدماتنا"
-              >
-                تعرف على خدماتنا
-                <svg className="w-5 h-5 mr-2 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </LinkScroll> */}
-              <LinkScroll
-                to="services"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className="inline-flex items-center hover:cursor-pointer px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors"
-                aria-label="تعرف على خدماتنا"
-              >
-                <a
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
                   className="inline-flex items-center hover:cursor-pointer px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors"
                   aria-label="تعرف على خدماتنا"
+                >
+                  تعرف على خدماتنا
+                  <svg className="w-5 h-5 mr-2 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </LinkScroll> */}
+
+              <a
+                href="#services"
+                className="inline-flex  items-center  hover:cursor-pointer px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors"
+                aria-label="تعرف على خدماتنا"
+              >
+                <LinkScroll
+                  to="services"
+                  className="flex flex-row"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  role="button"
+                  tabIndex={0}
                 >
                   تعرف على خدماتنا
                   <svg
@@ -508,8 +511,8 @@ const Index = () => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </a>
-              </LinkScroll>
+                </LinkScroll>
+              </a>
             </motion.div>
           </div>
         </div>

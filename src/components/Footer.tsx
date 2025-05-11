@@ -134,14 +134,22 @@ const Footer: React.FC = () => {
                 >
                   خدماتنا
                 </LinkScroll> */}
-                <LinkScroll to="services" smooth={true} offset={-50}>
-                  <a
-                    className="text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer"
-                    aria-label="خدماتنا"
+
+                <a
+                  href="#services"
+                  className="text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer"
+                  aria-label="تعرف على خدماتنا"
+                >
+                  <LinkScroll
+                    to="services"
+                    smooth={true}
+                    offset={-50}
+                    role="link"
+                    tabIndex={0}
                   >
                     خدماتنا
-                  </a>
-                </LinkScroll>
+                  </LinkScroll>
+                </a>
               </li>
               <li>
                 <Link
