@@ -223,7 +223,7 @@ const Navbar: React.FC = () => {
                       isScrolled ? "bg-nanosoft-primary text-white" : ""
                     )}
                   >
-                    <a target="_blank" href="#" rel="noopener noreferrer">
+                    <a target="_blank" href="https://nanosoft.ly/pricing" rel="noopener noreferrer">
                       ابدأ الآن
                     </a>
                   </Button>
