@@ -1,6 +1,6 @@
 
 
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
@@ -33,7 +33,6 @@ import Customer7 from "../assets/CustomersLogo/Picture7.webp";
 import Customer8 from "../assets/CustomersLogo/Picture8.webp"; 
 import Customer9 from "../assets/CustomersLogo/Picture9.webp"; 
 import SchemaMarkup from "@/components/SchemaMatkup.js";
-const  LoadingPage = lazy(()=>import("@/components/Loading.js"));
 
 const brands = [
   { src: Customer1, alt: "Microsoft" },
@@ -117,21 +116,10 @@ const Index = () => {
         category="Software Solutions"
         url="https://nanosoft.ly"
       />
-       {/* <SEO
-        title="نانو سوفت - حلول الأنظمة الرقمية"
-        description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
-        image={`${ImageOg}?v=1.2`}
-        category="Software Solutions"
-        url="https://nanosoft.ly"
-      /> */}
 
 
       {/* Schema.org */}
       <SchemaMarkup schema={homepageSchema} />
-
-       {/* <Suspense fallback={<LoadingPage/>}>
-        <SchemaMarkup schema={homepageSchema} />
-      </Suspense> */}
 
       
 
