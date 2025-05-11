@@ -223,9 +223,9 @@ const Navbar: React.FC = () => {
                       isScrolled ? "bg-nanosoft-primary text-white" : ""
                     )}
                   >
-                    <a target="_blank" rel="noopener noreferrer">
+                    <p >
                       ابدأ الآن
-                    </a>
+                    </p>
                   </Button>
                 </Link>
               </div>
