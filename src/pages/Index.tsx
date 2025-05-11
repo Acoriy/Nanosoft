@@ -186,14 +186,14 @@ const Index = () => {
               <img
                 src={HeroImage}
                 alt="Software Development"
-                className="rounded-2xl md:rounded-3xl w-full h-auto md:h-[500px] object-cover shadow-xl md:shadow-2xl"
+                className="rounded-2xl md:rounded-3xl w-full h-auto [230px] md:h-[450px] object-cover shadow-xl md:shadow-2xl"
                 loading="lazy"
               />
               {/* Quality Badge */}
               <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 w-[230px] md:max-w-[300px]">
                 <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-3 md:p-4">
                   <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-nanosoft-primary/20 flex items-center justify-center">
+                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full bg-nanosoft-primary/20 flex items-center justify-center">
                       <svg
                         className="w-4 h-4 md:w-5 md:h-5 text-nanosoft-primary"
                         fill="none"
@@ -216,10 +216,10 @@ const Index = () => {
                 </div>
               </div>
               {/* Delivery Badge */}
-              <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-[230px] md:max-w-[250px]">
+              <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-[230px] md:max-w-[250px] ">
                 <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl  p-3 md:p-4">
                   <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-nanosoft-primary/20 flex items-center justify-center">
+                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full bg-nanosoft-primary/20 flex items-center justify-center">
                       <svg
                         className="w-4 h-4 md:w-5 md:h-5 text-nanosoft-primary"
                         fill="none"
