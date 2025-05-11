@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Facebook, Youtube, Linkedin, Mail, Phone, MapPin } from "lucide-react";
@@ -27,7 +25,10 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-6 relative" role="contentinfo">
+    <footer
+      className="bg-gray-900 text-white pt-16 pb-6 relative"
+      role="contentinfo"
+    >
       {isVisible && (
         <motion.div
           className="fixed bottom-12 right-8 z-50"
@@ -65,7 +66,8 @@ const Footer: React.FC = () => {
               />
             </div>
             <p className="text-gray-400 mt-4">
-              شركة رائدة في مجال تقنية المعلومات وتطوير الحلول المتكاملة للشركات والمؤسسات.
+              شركة رائدة في مجال تقنية المعلومات وتطوير الحلول المتكاملة للشركات
+              والمؤسسات.
             </p>
             <div className="flex space-x-4 space-x-reverse">
               <a
@@ -124,13 +126,21 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <LinkScroll
+                {/* <LinkScroll
                   to="services"
                   smooth={true}
                   offset={-50}
                   className="text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer"
                 >
                   خدماتنا
+                </LinkScroll> */}
+                <LinkScroll to="services" smooth={true} offset={-50}>
+                  <a
+                    className="text-gray-400 hover:text-white transition-colors duration-300 cursor-pointer"
+                    aria-label="خدماتنا"
+                  >
+                    خدماتنا
+                  </a>
                 </LinkScroll>
               </li>
               <li>
@@ -198,15 +208,24 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-5">تواصل معنا</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-nanosoft-primary ml-3 mt-1" aria-hidden="true" />
+                <MapPin
+                  className="h-5 w-5 text-nanosoft-primary ml-3 mt-1"
+                  aria-hidden="true"
+                />
                 <span className="text-gray-400">ليبيا - طرابلس</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-nanosoft-primary ml-3" aria-hidden="true" />
+                <Phone
+                  className="h-5 w-5 text-nanosoft-primary ml-3"
+                  aria-hidden="true"
+                />
                 <span className="text-gray-400">918889193 218+</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-nanosoft-primary ml-3" aria-hidden="true" />
+                <Mail
+                  className="h-5 w-5 text-nanosoft-primary ml-3"
+                  aria-hidden="true"
+                />
                 <span className="text-gray-400">info@nanosoft.ly</span>
               </li>
             </ul>
