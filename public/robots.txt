@@ -12,5 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
-Sitemap: https://nanosoft.ly/sitemap.xml
+Sitemap: https://nanosoft-sass.vercel.app/sitemap.xml
 
