@@ -110,20 +110,20 @@ const Index = () => {
   return (
     <main className="min-h-screen overflow-x-hidden" lang="ar">
       {/* Open Graph  */}
-      {/* <SEO
+      <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         image={ImageOg}
         category="Software Solutions"
         url="https://nanosoft.ly"
-      /> */}
-       <SEO
+      />
+       {/* <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         image={`${ImageOg}?v=1.2`}
         category="Software Solutions"
         url="https://nanosoft.ly"
-      />
+      /> */}
 
 
       {/* Schema.org */}
