@@ -26,14 +26,14 @@ const SEO = ({ title, description, image, url, category }) => {
       <meta property="business:product:category" content={category} />
 
       {/* <meta property="og:image" content={image} /> */}
-      {/* <meta
+      <meta
         property="og:image"
         content={image || "https://nanosoft.ly/src/assets/LogoNanosSoft.png"}
-      /> */}
+      />
 
-      {
+      {/* {
         <meta name="og:image" property={'https://nanosoft.ly/' + image}/>
-      }
+      } */}
       <meta property="og:url" content={url} />
       
       <meta property="og:type" content="website" />
@@ -51,3 +51,36 @@ const SEO = ({ title, description, image, url, category }) => {
 };
 
 export default SEO;
+
+
+// import { Helmet } from 'react-helmet-async';
+
+// interface SeoProps {
+//   title: string;
+//   description: string;
+//   url: string;
+//   image?: string;
+// }
+
+// export default function Seo({ title, description, url, image }: SeoProps) {
+//   const baseUrl = import.meta.env.VITE_BASE_URL;
+//   const fullImageUrl = image 
+//     ? `${baseUrl}${image}`
+//     : `${baseUrl}/og-default.jpg`;
+
+//   return (
+//     <Helmet>
+//       {/* Balises Open Graph */}
+//       <meta property="og:title" content={title} />
+//       <meta property="og:description" content={description} />
+//       <meta property="og:url" content={url} />
+//       <meta property="og:type" content="website" />
+//       <meta property="og:image" content={fullImageUrl} />
+//       <meta property="og:locale" content="fr_FR" />
+
+//       {/* Balises standards */}
+//       <title>{title}</title>
+//       <meta name="description" content={description} />
+//     </Helmet>
+//   );
+// }

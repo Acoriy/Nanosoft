@@ -45,7 +45,8 @@ const Index = () => {
   const [changeIcon, setChangeIcon] = useState(false);
 
   // SEO
-  const ImageOg = "https://nanosoft.ly/LogoNanosSoft.png?w=1200&h=630&fit=crop";
+  // const ImageOg = "https://nanosoft.ly/LogoNanosSoft.png?w=1200&h=630&fit=crop";
+  const ImageOg = "/src/assets/Og-Images/LogoNanosSoft.jpg";
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);
 
@@ -108,6 +109,12 @@ const Index = () => {
         category="Software Solutions"
         url="https://nanosoft.ly"
       />
+       {/* <SEO 
+        title="نانو سوفت - حلول الأنظمة الرقمية" 
+        description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
+        url={window.location.href}
+        image="../assets/Og-Images/LogoNanosSoft.jpg"
+      /> */}
 
       {/* Schema.org */}
       <SchemaMarkup schema={homepageSchema} />
