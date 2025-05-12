@@ -46,7 +46,7 @@ const Index = () => {
 
   // SEO
   // const ImageOg = "https://nanosoft.ly/LogoNanosSoft.png?w=1200&h=630&fit=crop";
-  const ImageOg = "https://nanosoft-sass.vercel.app/src/assets/Og-Images/LogoNanosSoft.jpg";
+  const ImageOg = "https://nanosoft-sass.vercel.app/Og-Images/LogoNanosSoft.jpg";
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);
 
@@ -107,7 +107,7 @@ const Index = () => {
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         image={ImageOg}
         category="Software Solutions"
-        url="https://nanosoft.ly"
+        url="https://nanosoft-sass.vercel.app/"
       />
        {/* <SEO 
         title="نانو سوفت - حلول الأنظمة الرقمية" 
