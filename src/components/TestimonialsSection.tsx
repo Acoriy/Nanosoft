@@ -342,6 +342,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
         <h4 className="font-bold text-gray-900">{testimonial.author}</h4>
         <p className="text-gray-600 text-sm">{testimonial.role}</p>
       </div>
+       {/* <h1>teste</h1> */}
     </div>
   </motion.div>
 );
