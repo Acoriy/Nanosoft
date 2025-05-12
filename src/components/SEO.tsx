@@ -26,10 +26,14 @@ const SEO = ({ title, description, image, url, category }) => {
       <meta property="business:product:category" content={category} />
 
       {/* <meta property="og:image" content={image} /> */}
-      <meta
+      {/* <meta
         property="og:image"
         content={image || "https://nanosoft.ly/src/assets/LogoNanosSoft.png"}
-      />
+      /> */}
+
+      {
+        <meta name="og:image" property={'https://nanosoft.ly/' + image}/>
+      }
       <meta property="og:url" content={url} />
       
       <meta property="og:type" content="website" />
