@@ -46,7 +46,8 @@ const Index = () => {
 
   // SEO
   // const ImageOg = "https://nanosoft.ly/LogoNanosSoft.png?w=1200&h=630&fit=crop";
-  const ImageOg = "https://nanosoft-sass.vercel.app/src/assets/Og-Images/LogoNanosSoft.jpg";
+  const ImageOg =
+    "https://nanosoft-sass.vercel.app/src/assets/Og-Images/LogoNanosSoft.jpg";
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);
 
@@ -109,7 +110,7 @@ const Index = () => {
         category="Software Solutions"
         url="https://nanosoft.ly"
       />
-       {/* <SEO 
+      {/* <SEO 
         title="نانو سوفت - حلول الأنظمة الرقمية" 
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         url={window.location.href}
@@ -122,7 +123,9 @@ const Index = () => {
       {/* Section Hero */}
       <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/70 dark:to-gray-900/30"></div>
+        {/* <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/70 dark:to-gray-900/30">
+        
+        </div> */}
         <div className="container mx-auto px-4 z-10 py-12 md:py-20 w-auto h-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Text Content */}
