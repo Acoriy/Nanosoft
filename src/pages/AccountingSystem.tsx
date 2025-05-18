@@ -52,7 +52,6 @@ const features = [
   },
 ];
 
-
 const benefits = [
   "توفير الوقت وتقليل الأخطاء المحاسبية",
   "زيادة الدقة في التقارير المالية",
@@ -69,85 +68,81 @@ import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
 import SchemaMarkup from "@/components/SchemaMatkup";
 
-
-
-
 const AccountingSystem = () => {
-
   // schema.org :
   const accountingSchema = {
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "برنامج محاسبة متكامل لإدارة الشركات - نانو سوفت",
-        "description": "نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "softwareHelp": "https://nanosoft.ly/support",
-        "featureList": features.map(f => f.title),
-        "screenshot": {
+        name: "برنامج محاسبة متكامل لإدارة الشركات - نانو سوفت",
+        description:
+          "نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        softwareHelp: "https://nanosoft.ly/support",
+        featureList: features.map((f) => f.title),
+        screenshot: {
           "@type": "ImageObject",
           // "url": `${window.location.origin}${HeroAcounting}`,
-          "width": 1200,
-          "height": 630
+          width: 1200,
+          height: 630,
         },
-        "offers": {
+        offers: {
           "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "LYD",
-          "availability": "https://schema.org/InStock",
-          "url": "https://nanosoft.ly/pricing"
+          price: "0",
+          priceCurrency: "LYD",
+          availability: "https://schema.org/InStock",
+          url: "https://nanosoft.ly/pricing",
         },
-        "aggregateRating": {
+        aggregateRating: {
           "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "bestRating": "5",
-          "ratingCount": "237"
-        }
+          ratingValue: "4.9",
+          bestRating: "5",
+          ratingCount: "237",
+        },
       },
       {
         "@type": "Organization",
-        "name": "نانو سوفت",
-        "url": "https://nanosoft.ly",
+        name: "نانو سوفت",
+        url: "https://nanosoft.ly",
         // "logo": `${window.location.origin}${ImageOg}`,
-        "sameAs": [
+        sameAs: [
           "https://facebook.com/nanosoft",
-          "https://linkedin.com/company/nanosoft"
+          "https://linkedin.com/company/nanosoft",
         ],
-        "contactPoint": {
+        contactPoint: {
           "@type": "ContactPoint",
-          "telephone": "+218-21-1234567",
-          "contactType": "الدعم الفني",
-          "areaServed": "LY",
-          "availableLanguage": "ar"
-        }
+          telephone: "+218-21-1234567",
+          contactType: "الدعم الفني",
+          areaServed: "LY",
+          availableLanguage: "ar",
+        },
       },
       {
         "@type": "WebSite",
-        "url": "https://nanosoft.ly",
-        "potentialAction": {
+        url: "https://nanosoft.ly",
+        potentialAction: {
           "@type": "SearchAction",
-          "target": "https://nanosoft.ly/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    ]
+          target: "https://nanosoft.ly/search?q={search_term_string}",
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
   };
 
-  
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-28  md:pt-32">
-       {/* Open Graph  */}
-            <SEO
-              title="نانو سوفت - حلول الأنظمة الرقمية"
-              description="نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
-              image={ImageOg}
-              category="Software"
-              url="https://nanosoft.ly/accounting"
-            />
-        {/* Schema.org */}
+      {/* Open Graph  */}
+      <SEO
+        title="نانو سوفت - حلول الأنظمة الرقمية"
+        description="نظام محاسبة سحابي شامل مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
+        image={ImageOg}
+        category="Software"
+        url="https://nanosoft.ly/accounting"
+      />
+      {/* Schema.org */}
 
-        <SchemaMarkup schema={accountingSchema} />
+      <SchemaMarkup schema={accountingSchema} />
 
       <PageHeader
         title="برنامج محاسبة متكامل لإدارة الشركات"
@@ -263,9 +258,11 @@ const AccountingSystem = () => {
                 </motion.li>
               ))}
             </ul>
-            <Button className="mt-8 bg-nanosoft-primary hover:bg-nanosoft-primary/90">
-              ابدأ الآن مجاناً
-            </Button>
+            <Link to="/pricing">
+              <Button className="mt-8 bg-nanosoft-primary hover:bg-nanosoft-primary/90">
+                ابدأ الآن مجاناً
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
@@ -282,7 +279,7 @@ const AccountingSystem = () => {
         <div className="flex flex-wrap gap-4 justify-center">
           <Link to="/pricing">
             <Button className="bg-nanosoft-primary hover:bg-nanosoft-primary/90 px-8 py-6 text-lg">
-            ابدأ الاشتراك مجانا     
+              ابدأ الاشتراك مجانا
             </Button>
           </Link>
           <Link to="/contact">

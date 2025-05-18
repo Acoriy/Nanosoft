@@ -22,7 +22,6 @@ import SEO from "../components/SEO";
 import ImageOg from "../assets/LogoNanosSoft.png";
 import SchemaMarkup from "@/components/SchemaMatkup";
 
-
 const features = [
   {
     title: "إدارة المخزون الشاملة",
@@ -72,76 +71,76 @@ const benefits = [
 ];
 
 const InventorySystem = () => {
-
   // schema.org :
   const inventorySchema = {
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "نظام إدارة المخزون والمستودعات NanoSoft Inventory",
-        "description": "نظام متكامل لإدارة المخزون والمستودعات مع تحكم كامل في عمليات الجرد والتوريد والتوزيع",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "softwareVersion": "2.5.1",
-        "featureList": features.map(f => f.title),
-        "screenshot": {
+        name: "نظام إدارة المخزون والمستودعات NanoSoft Inventory",
+        description:
+          "نظام متكامل لإدارة المخزون والمستودعات مع تحكم كامل في عمليات الجرد والتوريد والتوزيع",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        softwareVersion: "2.5.1",
+        featureList: features.map((f) => f.title),
+        screenshot: {
           "@type": "ImageObject",
           // "url": `${process.env.VITE_SITE_URL}${MagasingHero}`,
-          "width": 1200,
-          "height": 630
+          width: 1200,
+          height: 630,
         },
-        "offers": {
+        offers: {
           "@type": "AggregateOffer",
-          "priceCurrency": "LYD",
-          "lowPrice": "350",
-          "highPrice": "3800",
-          "offerCount": "3",
-          "url": "https://nanosoft.ly/pricing"
+          priceCurrency: "LYD",
+          lowPrice: "350",
+          highPrice: "3800",
+          offerCount: "3",
+          url: "https://nanosoft.ly/pricing",
         },
-        "aggregateRating": {
+        aggregateRating: {
           "@type": "AggregateRating",
-          "ratingValue": "4.6",
-          "bestRating": "5",
-          "ratingCount": "64"
-        }
+          ratingValue: "4.6",
+          bestRating: "5",
+          ratingCount: "64",
+        },
       },
       {
         "@type": "Organization",
-        "name": "نانو سوفت",
-        "url": "https://nanosoft.ly",
+        name: "نانو سوفت",
+        url: "https://nanosoft.ly",
         // "logo": `${process.env.VITE_SITE_URL}${ImageOg}`,
-        "sameAs": [
+        sameAs: [
           "https://facebook.com/nanosoft",
-          "https://linkedin.com/company/nanosoft"
+          "https://linkedin.com/company/nanosoft",
         ],
-        "areaServed": {
+        areaServed: {
           "@type": "Country",
-          "name": "Libya"
+          name: "Libya",
         },
-        "knowsLanguage": "ar",
-        "foundingDate": "2020"
+        knowsLanguage: "ar",
+        foundingDate: "2020",
       },
       {
         "@type": "WebPage",
-        "name": "صفحة نظام المخزون - نانو سوفت",
-        "description": "نظام متكامل لإدارة المخزون والمستودعات مع تقارير تفصيلية وتحكم كامل",
-        "mainContentOfPage": {
+        name: "صفحة نظام المخزون - نانو سوفت",
+        description:
+          "نظام متكامل لإدارة المخزون والمستودعات مع تقارير تفصيلية وتحكم كامل",
+        mainContentOfPage: {
           "@type": "WebPageElement",
-          "cssSelector": ".container"
+          cssSelector: ".container",
         },
-        "primaryImageOfPage": {
+        primaryImageOfPage: {
           "@type": "ImageObject",
           // "url": `${process.env.VITE_SITE_URL}${MagasingHero}`
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
 
-  
   return (
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 pt-28  md:pt-32">
-       {/* Open Graph  */}
-       <SEO
+      {/* Open Graph  */}
+      <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="نظام إدارة متكامل للمخزون والمستودعات مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
         image={ImageOg}
@@ -153,7 +152,7 @@ const InventorySystem = () => {
       <SchemaMarkup schema={inventorySchema} />
 
       <PageHeader
-        title="برنامج إدارة المخزون والمستودعات"
+        title="نظام لوجستي لإدارة المخازن والمشتريات"
         description="نظام إدارة متكامل للمخزون والمستودعات مصمم خصيصاً للشركات والمؤسسات في ليبيا والعالم العربي"
       />
 
@@ -169,7 +168,7 @@ const InventorySystem = () => {
             نظام متطور
           </Badge>
           <h1 className="text-4xl font-bold mb-6">
-            إدارة المخزون والمستودعات بكفاءة عالية
+            إدارة المخازن والمشتريات بكفاءة عالية
           </h1>
           <p className="text-gray-600 text-lg mb-8">
             برنامج إدارة المخزون من نانوسوفت يوفر لك كل ما تحتاجه لتنظيم مخزونك
@@ -282,8 +281,8 @@ const InventorySystem = () => {
           جاهز لتحسين إدارة المخزون في شركتك؟
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-        إنضم إلى المؤسسات  التي تستخدم نظام إدارة المخزون من نانوسوفت
-          للتحكم في مخزونها بكفاءة وفعالية
+          إنضم إلى المؤسسات التي تستخدم نظام إدارة المخزون من نانوسوفت للتحكم في
+          مخزونها بكفاءة وفعالية
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <Link to="/pricing">
