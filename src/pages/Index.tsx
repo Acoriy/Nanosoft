@@ -391,118 +391,188 @@ const Index = () => {
       </section>
 
       {/* Section About */}
-      <section className="py-20" aria-labelledby="about-heading">
-  <div className="container mx-auto px-4">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-      {/* Image avec animation */}
-      <motion.figure
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="relative"
-      >
-        <div className="w-full h-full absolute top-8 left-8 bg-nanosoft-primary/10 rounded-3xl" aria-hidden="true"></div>
-        <img
-          src={ExperiencesImage}
-          alt="صورة لفريق العمل ذو خبرة في تطوير البرمجيات"
-          className="rounded-3xl w-full h-[500px] object-cover shadow-2xl relative z-10"
-          loading="lazy"
-          decoding="async"
-          // fetchpriority="low"
-        />
-        <figcaption className="absolute -top-6 -left-6 z-20">
-          <div className="bg-nanosoft-primary rounded-2xl shadow-xl p-6 text-white">
-            <h4 className="text-xl font-bold mb-2">+7 سنوات</h4>
-            <p className="text-white/80">من الخبرة في مجال البرمجيات</p>
-          </div>
-        </figcaption>
-      </motion.figure>
-
-      {/* Texte avec animation */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        aria-describedby="about-description"
-      >
-        <span
-          className="inline-block px-4 py-1 bg-nanosoft-primary/10 text-nanosoft-primary rounded-full text-sm font-medium mb-4"
-          id="about-label"
-        >
-          من نحن
-        </span>
-        <h2 id="about-heading" className="text-3xl md:text-4xl font-bold mb-6">
-          فريق من الخبراء المتخصصين في تطوير البرمجيات
-        </h2>
-        <p className="text-lg text-gray-700 mb-6" id="about-description">
-          بدأت رحلتنا في سنة 2018، ومنذ ذلك الحين قمنا بمساعدة العديد من الزبائن على رقمنة أعمالهم وتحسين كفائتها.
-        </p>
-
-        <ul className="space-y-4 mb-8" aria-label="مميزات فريقنا">
-          {[
-            "فريق من المطورين المحترفين ذوي الخبرة العالية",
-            "نهج مخصص يركز على احتياجات العميل",
-            "تقنيات متطورة وأحدث الأدوات لتقديم أفضل النتائج",
-            "دعم مستمر ومتابعة لضمان رضا العملاء"
-          ].map((item, index) => (
-            <li key={index} className="flex items-start">
-              <div
-                className="w-5 h-5 rounded-full bg-nanosoft-primary/20 flex items-center justify-center ml-3 mt-1"
-                aria-hidden="true"
-              >
-                <svg
-                  className="w-3 h-3 text-nanosoft-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="w-full h-full absolute top-8 left-8 bg-nanosoft-primary/10 rounded-3xl"></div>
+              <img
+                src={ExperiencesImage}
+                alt="Our Team"
+                className="rounded-3xl w-full h-[500px] object-cover shadow-2xl relative z-10"
+                loading="lazy"
+              />
+              <div className="absolute -top-6 -left-6 z-20">
+                <div className="bg-nanosoft-primary rounded-2xl shadow-xl p-6 text-white">
+                  <h4 className="text-xl font-bold mb-2">+7 سنوات</h4>
+                  <p className="text-white/80">من الخبرة في مجال البرمجيات</p>
+                </div>
               </div>
-              <p className="text-gray-700">{item}</p>
-            </li>
-          ))}
-        </ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <span className="inline-block px-4 py-1 bg-nanosoft-primary/10 text-nanosoft-primary rounded-full text-sm font-medium mb-4">
+                من نحن
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                فريق من الخبراء المتخصصين في تطوير البرمجيات
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                بدأت رحلتنا في سنة 2018، ومنذ ذلك الحين قمنا بمساعدة العديد من
+                الزبائن على رقمنة أعمالهم وتحسين كفائتها.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start">
+                  <div
+                    className="w-5 h-5 rounded-full bg-nanosoft-primary/20 flex items-center justify-center ml-3 mt-1"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      className="w-3 h-3 text-nanosoft-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-gray-600">
+                    فريق من المطورين المحترفين ذوي الخبرة العالية
+                  </p>
+                </div>
+                <div className="flex items-start">
+                  <div
+                    className="w-5 h-5 rounded-full bg-nanosoft-primary/20 flex items-center justify-center ml-3 mt-1"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      className="w-3 h-3 text-nanosoft-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-gray-600">
+                    نهج مخصص يركز على احتياجات العميل
+                  </p>
+                </div>
+                <div className="flex items-start">
+                  <div
+                    className="w-5 h-5 rounded-full bg-nanosoft-primary/20 flex items-center justify-center ml-3 mt-1"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      className="w-3 h-3 text-nanosoft-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-gray-600">
+                    تقنيات متطورة وأحدث الأدوات لتقديم أفضل النتائج
+                  </p>
+                </div>
+                <div className="flex items-start">
+                  <div
+                    className="w-5 h-5 rounded-full bg-nanosoft-primary/20 flex items-center justify-center ml-3 mt-1"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      className="w-3 h-3 text-nanosoft-primary"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-gray-600">
+                    دعم مستمر ومتابعة لضمان رضا العملاء
+                  </p>
+                </div>
+              </div>
+              {/* <LinkScroll
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  className="inline-flex items-center hover:cursor-pointer px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors"
+                  aria-label="تعرف على خدماتنا"
+                >
+                  تعرف على خدماتنا
+                  <svg className="w-5 h-5 mr-2 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </LinkScroll> */}
 
-        {/* Bouton d'appel à l'action */}
-        <LinkScroll
-          to="services"
-          spy={true}
-          smooth={true}
-          duration={500}
-          role="button"
-          tabIndex={0}
-          aria-label="تعرف على خدماتنا"
-          className="inline-flex items-center px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors"
-        >
-          تعرف على خدماتنا
-          <svg
-            className="w-5 h-5 mr-2 rtl:rotate-180"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </LinkScroll>
-      </motion.div>
-    </div>
-  </div>
-</section>
-
+              <a
+                href="#services"
+                className="inline-flex  items-center  hover:cursor-pointer px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors"
+                aria-label="تعرف على خدماتنا"
+              >
+                <LinkScroll
+                  to="services"
+                  className="flex flex-row"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  role="button"
+                  tabIndex={0}
+                >
+                  تعرف على خدماتنا
+                  <svg
+                    className="w-5 h-5 mr-2 rtl:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </LinkScroll>
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
