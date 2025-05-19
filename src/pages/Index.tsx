@@ -29,8 +29,6 @@ import Customer8 from "../assets/CustomersLogo/Picture8.webp";
 import Customer9 from "../assets/CustomersLogo/Picture9.webp";
 import SchemaMarkup from "@/components/SchemaMatkup.js";
 
-
-
 const brands = [
   { src: Customer1, alt: "Client partenaire 1" },
   { src: Customer2, alt: "Client partenaire 2" },
