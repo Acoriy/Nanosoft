@@ -1,5 +1,5 @@
 
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
@@ -14,6 +14,7 @@ import SchemaMarkup from "../components/SchemaMatkup.js";
 import { serviceCategories } from "../data/pricingData";
 import LogosSection from "../components/LogosSection";
 import ProductsSection from "../components/ProductsSection";
+// import CtaSection from "../components/CtaSection";
 
 // Images et logos - importées avec des noms explicites
 import systems from "../assets/IndexImages/systheme partenaria.webp";
@@ -49,6 +50,14 @@ const brands = [
 const Index = () => {
   // État pour gérer le changement d'icône au survol
   const [changeIcon, setChangeIcon] = useState(false);
+  
+  // État pour le chargement progressif
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  // Initialisation du chargement de la page
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   // URL de l'image pour Open Graph
   const ImageOg = "https://nanosoft.ly/src/assets/Og-Images/LogoNanosSoft.jpg";
@@ -105,7 +114,7 @@ const Index = () => {
   };
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
+    <main lang="ar" dir="rtl" className="min-h-screen overflow-x-hidden">
       {/* SEO Meta Tags */}
       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
@@ -120,7 +129,7 @@ const Index = () => {
 
       {/* Section Hero */}
       <section 
-        aria-label="Section principale de présentation NanoSoft"
+        aria-label="القسم الرئيسي لتقديم نانو سوفت"
         role="region"
         className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16"
       >
@@ -129,7 +138,7 @@ const Index = () => {
             {/* Contenu Texte */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 30 }}
               transition={{ 
                 duration: 0.8,
                 ease: [0.25, 0.46, 0.45, 0.94],
@@ -142,7 +151,6 @@ const Index = () => {
               <span 
                 className="inline-block px-4 py-1 bg-nanosoft-primary/10 text-nanosoft-primary rounded-full text-sm font-semibold mb-4"
                 role="status"
-                aria-live="polite"
               >
                 الرائدة في حلول تقنية المعلومات
               </span>
@@ -151,12 +159,11 @@ const Index = () => {
                 id="mainHeading"
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 md:mb-6 leading-tight"
               >
-                <span aria-hidden="true" className="inline-block relative text-nanosoft-primary">
+                <span className="inline-block relative text-nanosoft-primary">
                   NanoSoft
                 </span>
-                <span className="sr-only">NanoSoft</span>
                 <br />
-                <span className="font-semibold" role="text">لحلول الأنظمة الرقمية</span>
+                <span className="font-semibold">لحلول الأنظمة الرقمية</span>
               </h1>
 
               <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0">
@@ -167,7 +174,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 md:gap-8 justify-center lg:justify-start">
                 <Link
                   to="/pricing"
-                  className="text-white bg-nanosoft-primary text-lg md:text-xl font-bold px-6 py-3 md:p-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
+                  className="text-white bg-nanosoft-primary text-lg md:text-xl font-bold px-6 py-3 md:p-4 rounded-lg hover:bg-green-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-nanosoft-primary focus:ring-offset-2"
                   role="button"
                   aria-label="تجربة مجانية (إصدار تجريبي مجاني لمدة 14 يومًا)"
                 >
@@ -175,7 +182,7 @@ const Index = () => {
                 </Link>
                 <Link
                   to="/contact"
-                  className="bg-transparent text-nanosoft-accent font-bold text-lg md:text-xl flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1"
+                  className="bg-transparent text-nanosoft-accent font-bold text-lg md:text-xl flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1 focus:outline-none focus:ring-2 focus:ring-nanosoft-accent focus:ring-offset-2"
                   onMouseEnter={handleHoverIconBtn}
                   onMouseLeave={handleHoverIconBtn}
                   aria-label="احجز عرضًا توضيحيًا مع خبرائنا"
@@ -193,25 +200,26 @@ const Index = () => {
             {/* Contenu Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: isLoaded ? 1 : 0, scale: isLoaded ? 1 : 0.9 }}
               transition={{ 
                 duration: 0.8,
                 delay: 0.2,
                 ease: "easeOut"
               }}
               className="order-1 lg:order-2 relative mb-12 lg:mb-0"
-              role="img"
               aria-label="عرض مرئي لحلول NanoSoft الرقمية"
             >
               <div className="w-full h-full absolute top-4 md:top-8 right-4 md:right-8 bg-nanosoft-primary/10 rounded-2xl md:rounded-3xl"></div>
               
               <picture>
+                <source type="image/webp" srcSet={HeroImage} />
                 <img
                   src={HeroImage}
                   alt="فريق NanoSoft يعمل على تطوير حلول برمجية متقدمة"
                   className="rounded-2xl md:rounded-3xl w-auto h-[230px] md:h-[450px] object-cover shadow-xl md:shadow-2xl"
                   loading="eager"
                   decoding="async" 
+                  // fetchpriority="high"
                   width={600}
                   height={400}
                 />
@@ -220,7 +228,6 @@ const Index = () => {
               {/* Badge Qualité */}
               <div 
                 className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 w-[230px] md:max-w-[300px]"
-                role="complementary"
                 aria-label="ضمان الجودة"
               >
                 <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-3 md:p-4">
@@ -234,6 +241,7 @@ const Index = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -254,7 +262,6 @@ const Index = () => {
               {/* Badge Livraison */}
               <div 
                 className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-[230px] md:max-w-[250px]"
-                role="complementary"
                 aria-label="ضمان التسليم"
               >
                 <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-3 md:p-4">
@@ -268,6 +275,7 @@ const Index = () => {
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
+                        aria-hidden="true"
                       >
                         <path
                           strokeLinecap="round"
@@ -291,7 +299,6 @@ const Index = () => {
         {/* Indicateur de défilement */}
         <div 
           className="absolute -bottom-2 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
-          role="navigation"
           aria-label="الانتقال إلى القسم التالي"
         >
           <a
@@ -362,7 +369,7 @@ const Index = () => {
                 <p className="text-gray-600 mb-6">{service.description}</p>
                 <Link
                   to={`/${service.id}`}
-                  className="inline-flex items-center text-nanosoft-primary font-medium group-hover:translate-x-2 transition-transform duration-300"
+                  className="inline-flex items-center text-nanosoft-primary font-medium group-hover:translate-x-2 transition-transform duration-300 focus:outline-none focus:underline"
                   aria-label={`عرض التفاصيل: ${service.name}`}
                 >
                   عرض التفاصيل
@@ -442,6 +449,7 @@ const Index = () => {
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -465,6 +473,7 @@ const Index = () => {
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -488,6 +497,7 @@ const Index = () => {
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -511,6 +521,7 @@ const Index = () => {
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -526,37 +537,31 @@ const Index = () => {
                 </div>
               </div>
 
-              <a
-                href="#services"
-                className="inline-flex items-center hover:cursor-pointer px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors"
+              <LinkScroll
+                to="services"
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="inline-flex items-center hover:cursor-pointer px-6 py-3 bg-nanosoft-primary text-white rounded-xl font-medium hover:bg-nanosoft-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-nanosoft-primary focus:ring-offset-2"
                 aria-label="تعرف على خدماتنا"
+                tabIndex={0}
               >
-                <LinkScroll
-                  to="services"
-                  className="flex flex-row"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  role="button"
-                  tabIndex={0}
+                تعرف على خدماتنا
+                <svg
+                  className="w-5 h-5 mr-2 rtl:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
-                  تعرف على خدماتنا
-                  <svg
-                    className="w-5 h-5 mr-2 rtl:rotate-180"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </LinkScroll>
-              </a>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </LinkScroll>
             </motion.div>
           </div>
         </div>
@@ -598,7 +603,7 @@ const Index = () => {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -627,7 +632,7 @@ const Index = () => {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -656,7 +661,7 @@ const Index = () => {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -685,7 +690,7 @@ const Index = () => {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -714,7 +719,7 @@ const Index = () => {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -743,7 +748,7 @@ const Index = () => {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -766,57 +771,8 @@ const Index = () => {
       {/* Products Section */}
       <ProductsSection />
 
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-nanosoft-primary to-nanosoft-accent rounded-3xl overflow-hidden"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-              <div className="p-10 md:p-16 text-white">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  جاهز لتطوير أعمالك؟
-                </h2>
-                <p className="text-white/80 text-lg mb-8">
-                  دعنا نساعدك في تحويل أفكارك إلى حلول رقمية مبتكرة. اتصل بنا
-                  اليوم للحصول على استشارة مجانية وابدأ رحلتك نحو النجاح الرقمي.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link
-                    to="/pricing"
-                    className="px-8 py-4 bg-white text-nanosoft-primary rounded-xl font-medium hover:bg-gray-100 transform transition-all duration-300 shadow-lg text-center"
-                    aria-label="عرض الأسعار"
-                  >
-                    عرض الأسعار
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="px-8 py-4 border border-white text-white rounded-xl font-medium hover:bg-white/10 transform transition-all duration-300 text-center"
-                    aria-label="تواصل معنا"
-                  >
-                    تواصل معنا
-                  </Link>
-                </div>
-              </div>
-              <div className="hidden lg:block">
-                <img
-                  src={systems}
-                  alt="أنظمة شراكة من NanoSoft"
-                  className="w-full h-full object-cover"
-                  style={{ maxHeight: "500px" }}
-                  loading="lazy"
-                  width={600}
-                  height={500}
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA Section
+      // <CtaSection systemsImage={systems} /> */}
     </main>
   );
 };
