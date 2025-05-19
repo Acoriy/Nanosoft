@@ -1,4 +1,3 @@
-
 import { lazy, Suspense, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -219,7 +218,7 @@ const Index = () => {
                   className="rounded-2xl md:rounded-3xl w-auto h-[230px] md:h-[450px] object-cover shadow-xl md:shadow-2xl"
                   loading="eager"
                   decoding="async" 
-                  // fetchpriority="high"
+                  fetchPriority="high"
                   width={600}
                   height={400}
                 />
@@ -771,8 +770,8 @@ const Index = () => {
       {/* Products Section */}
       <ProductsSection />
 
-      {/* CTA Section
-      // <CtaSection systemsImage={systems} /> */}
+      {/* CTA Section */}
+      {/* <CtaSection systemsImage={systems} />  */}
     </main>
   );
 };
