@@ -24,7 +24,7 @@ import Customer6 from "../assets/CustomersLogo/Picture8.webp";
 
 import ImageOg from "../assets/LogoNanosSoft.png";
 import SEO from "../components/SEO";
-import SchemaMarkup from "@/components/SchemaMatkup";
+import { Helmet } from "react-helmet";
 
 
 
@@ -190,7 +190,21 @@ const WebDevService = () => {
       />
 
       {/* Schema.org */}
-      <SchemaMarkup schema={webDevSchema} />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "تصميم واجهات المستخدم",
+            "description": "نقوم بتصميم واجهات استخدام جذابة ومتجاوبة باستخدام أحدث تقنيات الـ UI/UX.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Rembirio",
+              "url": "https://votresite.com"
+            }
+          })}
+        </script>
+      </Helmet>
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 md:px-6 py-8 md:py-16">
