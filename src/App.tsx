@@ -46,7 +46,7 @@ const CloudServices = lazy(() => import("./components/CloudServices"));
 const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
 const DashboardLayout = lazy(() => import("./components/DashboardLayout"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
-const BlogAdmin = lazy(() => import("./pages/admin/BlogAdmin"));
+// const BlogAdmin = lazy(() => import("./pages/admin/BlogAdmin"));
 const PriceAdmin = lazy(() => import("./pages/admin/PriceAdmin"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Loading =   lazy(()=>import("./components/Loading"))

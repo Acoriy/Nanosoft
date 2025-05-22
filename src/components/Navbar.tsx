@@ -149,7 +149,7 @@ const Navbar: React.FC = () => {
     { name: "الرئيسية", path: "/" },
     { name: "الأسعار", path: "/pricing" },
     // { name: "المدونة", path: "/blog" },
-    { name: "المدونة", path: "https://nanosoft.ly/blog", external: true },
+    { name: "المدونة", path: "/https://nanosoft.ly/blog", external: true },
     { name: "اتصل بنا", path: "/contact" },
   ];
   const desktopNavLinks = navLinks.filter((link) => link.path !== "/pricing");
