@@ -30,8 +30,8 @@ const MainLayout = memo(({ children }: MainLayoutProps) => (
 // Pages chargées dynamiquement
 const Index = lazy(() => import("./pages/Index"));
 const Pricing = lazy(() => import("./pages/Pricing"));
-const Blog = lazy(() => import("./pages/Blog"));
-const BlogPost = lazy(() => import("./pages/BlogPost"));
+// const Blog = lazy(() => import("./pages/Blog"));
+// const BlogPost = lazy(() => import("./pages/BlogPost"));
 const ContactUs = lazy(() => import("./pages/ContactUs"));
 const WebDevService = lazy(() => import("./pages/WebDevService"));
 const AccountingSystem = lazy(() => import("./pages/AccountingSystem"));
@@ -75,7 +75,7 @@ const App = () => (
                 element={
                   <MainLayout>
                     <CloudServices />
-                  </MainLayout>
+                  </MainLayout>                  
                 }
               />
 
@@ -191,7 +191,7 @@ const App = () => (
               />
 
               {/* Routes dynamiques avec Suspense individuel */}
-              <Route
+              {/* <Route
                 path="/blog"
                 element={
                   <MainLayout>
@@ -200,9 +200,9 @@ const App = () => (
                     </Suspense>
                   </MainLayout>
                 }
-              />
+              /> */}
 
-              <Route
+              {/* <Route
                  path="/blog/:id"
                  element={
                    <>
@@ -214,7 +214,7 @@ const App = () => (
                      
                    </>
                  }
-               />
+               /> */}
 
               {/* Routes admin séparées sans layout commun */}
               <Route
@@ -235,7 +235,7 @@ const App = () => (
                 }
               >
                 <Route index element={<Dashboard />} />
-                <Route path="blogs" element={<BlogAdmin />} />
+                {/* <Route path="blogs" element={<BlogAdmin />} /> */}
                 <Route path="prices" element={<PriceAdmin />} />
               </Route>
 

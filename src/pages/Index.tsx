@@ -30,23 +30,23 @@ import Customer9 from "../assets/CustomersLogo/Picture9.webp";
 import SchemaMarkup from "@/components/SchemaMatkup.js";
 
 const brands = [
-  { src: Customer1, alt: "Client partenaire 1" },
-  { src: Customer2, alt: "Client partenaire 2" },
-  { src: Customer3, alt: "Client partenaire 3" },
-  { src: Customer4, alt: "Client partenaire 4" },
-  { src: Customer5, alt: "Client partenaire 5" },
-  { src: Customer6, alt: "Client partenaire 6" },
-  { src: Customer7, alt: "Client partenaire 7" },
-  { src: Customer8, alt: "Client partenaire 8" },
-  { src: Customer9, alt: "Client partenaire 9" },
+  { src: Customer1, alt: "Microsoft" },
+  { src: Customer2, alt: "IBM" },
+  { src: Customer3, alt: "Oracle" },
+  { src: Customer4, alt: "Amazon Web Services" },
+  { src: Customer5, alt: "Amazon Web Services" },
+  { src: Customer6, alt: "Amazon Web Services" },
+  { src: Customer7, alt: "Amazon Web Services" },
+  { src: Customer8, alt: "Amazon Web Services" },
+  { src: Customer9, alt: "Amazon Web Services" },
 ];
 
 const Index = () => {
   const [changeIcon, setChangeIcon] = useState(false);
 
   // SEO
-  // const ImageOg = "https://nanosoft-sass.vercel.app/src/assets/Og-Images/LogoNanosSoft.jpg";
-  const ImageOg = "https://nanosoft.ly/src/assets/Og-Images/LogoNanosSoft.jpg";
+  // const ImageOg = "https://nanosoft.ly/LogoNanosSoft.png?w=1200&h=630&fit=crop";
+  const ImageOg = "https://nanosoft-sass.vercel.app/src/assets/Og-Images/LogoNanosSoft.jpg";
 
   const handleHoverIconBtn = () => setChangeIcon(!changeIcon);
 
@@ -100,17 +100,16 @@ const Index = () => {
   };
 
   return (
-    <main className="min-h-screen overflow-x-hidden">
+    <main className="min-h-screen overflow-x-hidden" lang="ar">
       {/* Open Graph  */}
       <SEO
         title="نانو سوفت - حلول الأنظمة الرقمية"
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         image={ImageOg}
         category="Software Solutions"
-        // url="https://nanosoft.ly"
-        url={window.location.href}
+        url="https://nanosoft.ly"
       />
-      {/* <SEO 
+       {/* <SEO 
         title="نانو سوفت - حلول الأنظمة الرقمية" 
         description="شركة برمجيات متخصصة في تطوير المواقع والتطبيقات وأنظمة إدارة الأعمال المتكاملة بتقنيات حديثة"
         url={window.location.href}
@@ -121,212 +120,164 @@ const Index = () => {
       <SchemaMarkup schema={homepageSchema} />
 
       {/* Section Hero */}
-      <section 
-  aria-label="Section principale de présentation NanoSoft"
-  role="region"
-  className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16"
->
-  <div className="container mx-auto md:px-12 z-10 py-12 md:py-20 w-auto h-auto">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-      {/* Contenu Texte */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ 
-          duration: 0.8,
-          ease: [0.25, 0.46, 0.45, 0.94],
-          delay: 0.1
-        }}
-        className="order-2 lg:order-1 text-center lg:text-right"
-        role="article"
-        aria-labelledby="mainHeading"
-      >
-        <span 
-          className="inline-block px-4 py-1 bg-nanosoft-primary/10 text-nanosoft-primary rounded-full text-sm font-semibold mb-4"
-          role="status"
-          aria-live="polite"
-        >
-          الرائدة في حلول تقنية المعلومات
-        </span>
-        
-        <h1 
-          id="mainHeading"
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 md:mb-6 leading-tight"
-        >
-          <span aria-hidden="true" className="inline-block relative text-nanosoft-primary">
-            NanoSoft
-          </span>
-          <span className="sr-only">NanoSoft</span>
-          <br />
-          <span className="font-semibold" role="text">لحلول الأنظمة الرقمية</span>
-        </h1>
-
-        <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0">
-          نقدم لك حلول تقنية متكاملة تساعدك على تطوير أعمالك وزيادة إنتاجيتك مع أحدث التقنيات المبتكرة.
-        </p>
-
-        {/* Boutons */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-8 justify-center lg:justify-start">
-          <Link
-            to="/pricing"
-            className="text-white bg-nanosoft-primary text-lg md:text-xl font-bold px-6 py-3 md:p-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
-            role="button"
-            aria-label="تجربة مجانية (إصدار تجريبي مجاني لمدة 14 يومًا)"
-          >
-            تجربة مجانية
-          </Link>
-          <Link
-            to="/contact"
-            className="bg-transparent text-nanosoft-accent font-bold text-lg md:text-xl flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1"
-            onMouseEnter={handleHoverIconBtn}
-            onMouseLeave={handleHoverIconBtn}
-            aria-label="احجز عرضًا توضيحيًا مع خبرائنا"
-          >
-            <span>احجز عرضًا توضيحيًا</span>
-            {changeIcon ? (
-              <ArrowLeft size={24} className="md:w-7 md:h-7" aria-hidden="true" />
-            ) : (
-              <IoIosArrowBack size={24} className="md:w-7 md:h-7" aria-hidden="true" />
-            )}
-          </Link>
-        </div>
-      </motion.div>
-
-      {/* Contenu Image */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ 
-          duration: 0.8,
-          delay: 0.2,
-          ease: "easeOut"
-        }}
-        className="order-1 lg:order-2 relative mb-12 lg:mb-0"
-        role="img"
-        aria-label="عرض مرئي لحلول NanoSoft الرقمية"
-      >
-        <div className="w-full h-full absolute top-4 md:top-8 right-4 md:right-8 bg-nanosoft-primary/10 rounded-2xl md:rounded-3xl"></div>
-        
-        <picture>
-          {/* <source srcSet={HeroImageWebP} type="image/webp" /> */}
-          <img
-            src={HeroImage}
-            alt="فريق NanoSoft يعمل على تطوير حلول برمجية متقدمة"
-            className="rounded-2xl md:rounded-3xl w-auto h-[230px] md:h-[450px] object-cover shadow-xl md:shadow-2xl"
-            loading="eager"
-            decoding="async" 
-            // fetchpriority="high"
-            width={600}
-            height={400}
-          />
-        </picture>
-
-        {/* Badge Qualité */}
-        <div 
-          className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 w-[230px] md:max-w-[300px]"
-          role="complementary"
-          aria-label="ضمان الجودة"
-        >
-          <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-3 md:p-4">
-            <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
-              <div 
-                className="w-5 h-5 md:w-10 md:h-10 rounded-full bg-nanosoft-primary/20 flex items-center justify-center"
-                aria-hidden="true"
-              >
-                <svg
-                  className="w-4 h-4 md:w-5 md:h-5 text-nanosoft-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+      <section className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center pt-20 md:pt-16">
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/70 dark:to-gray-900/30"></div>
+        <div className="container mx-auto px-4 z-10 py-12 md:py-20 w-auto h-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1 text-center lg:text-right"
+            >
+              <span className="inline-block px-4 py-1 bg-nanosoft-primary/10 text-nanosoft-primary rounded-full text-sm font-semibold mb-4">
+                الرائدة في حلول تقنية المعلومات
+              </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 md:mb-6 leading-tight">
+                <span className="inline-block relative text-nanosoft-primary">
+                  NanoSoft
+                </span>
+                <br />
+                <span className="font-semibold">لحلول الأنظمة الرقمية</span>
+              </h1>
+              <p className="text-base md:text-lg lg:text-xl text-gray-700 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0">
+                نقدم لك حلول تقنية متكاملة تساعدك على تطوير أعمالك وزيادة
+                إنتاجيتك مع أحدث التقنيات المبتكرة.
+              </p>
+              {/* Boutons */}
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-8 justify-center lg:justify-start">
+                <Link
+                  to="/pricing"
+                  className="text-white bg-nanosoft-primary text-lg md:text-xl font-bold px-6 py-3 md:p-4 rounded-lg hover:bg-green-700 transition-colors duration-300"
+                  aria-label="Essai gratuit"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
+                  تجربة مجانية
+                </Link>
+                <Link
+                  to="/contact"
+                  className="bg-transparent text-nanosoft-accent font-bold text-lg md:text-xl flex items-center justify-center gap-1 transition-transform duration-300 ease-in-out hover:translate-x-1"
+                  onMouseEnter={handleHoverIconBtn}
+                  onMouseLeave={handleHoverIconBtn}
+                  aria-label="احجز عرضًا توضيحيًا"
+                >
+                  <span>احجز عرضًا توضيحيًا</span>
+                  {changeIcon ? (
+                    <ArrowLeft size={24} className="md:w-7 md:h-7" />
+                  ) : (
+                    <IoIosArrowBack size={24} className="md:w-7 md:h-7" />
+                  )}
+                </Link>
               </div>
-              <h3 className="font-bold text-sm md:text-base">جودة عالية</h3>
-            </div>
-            <p className="text-gray-600 text-xs md:text-sm">
-              نحن نقدم حلولًا برمجية عالية الجودة تلبي احتياجاتك وتتجاوز توقعاتك.
-            </p>
+            </motion.div>
+            {/* Image Content */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="order-1 lg:order-2 relative mb-12 lg:mb-0"
+            >
+              <div className="w-full h-full absolute top-4 md:top-8 right-4 md:right-8 bg-nanosoft-primary/10 rounded-2xl md:rounded-3xl"></div>
+              <img
+                src={HeroImage}
+                alt="Software Development"
+                className="rounded-2xl md:rounded-3xl w-auto h-auto [230px] md:h-[450px] object-cover shadow-xl md:shadow-2xl "
+                loading="lazy"
+              />
+              {/* Quality Badge */}
+              <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 w-[230px] md:max-w-[300px]">
+                <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-3 md:p-4">
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full bg-nanosoft-primary/20 flex items-center justify-center">
+                      <svg
+                        className="w-4 h-4 md:w-5 md:h-5 text-nanosoft-primary"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-sm md:text-base">
+                      جودة عالية
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-xs md:text-sm">
+                    نحن نقدم حلولًا برمجية عالية الجودة تلبي احتياجاتك وتتجاوز
+                    توقعاتك.
+                  </p>
+                </div>
+              </div>
+              {/* Delivery Badge */}
+              <div className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-[230px] md:max-w-[250px] ">
+                <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl  p-3 md:p-4">
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <div className="w-5 h-5 md:w-10 md:h-10 rounded-full bg-nanosoft-primary/20 flex items-center justify-center">
+                      <svg
+                        className="w-4 h-4 md:w-5 md:h-5 text-nanosoft-primary"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="font-bold text-sm md:text-base">
+                      تسليم سريع
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-xs md:text-sm">
+                    نلتزم بتسليم مشاريعنا في الوقت المحدد دون المساس بالجودة.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
 
-        {/* Badge Livraison */}
-        <div 
-          className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-[230px] md:max-w-[250px]"
-          role="complementary"
-          aria-label="ضمان التسليم"
-        >
-          <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl p-3 md:p-4">
-            <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
-              <div 
-                className="w-5 h-5 md:w-10 md:h-10 rounded-full bg-nanosoft-primary/20 flex items-center justify-center"
-                aria-hidden="true"
-              >
-                <svg
-                  className="w-4 h-4 md:w-5 md:h-5 text-nanosoft-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="font-bold text-sm md:text-base">تسليم سريع</h3>
-            </div>
-            <p className="text-gray-600 text-xs md:text-sm">
-              نلتزم بتسليم مشاريعنا في الوقت المحدد دون المساس بالجودة.
-            </p>
-          </div>
+        {/* Scroll Down Indicator */}
+        <div className="absolute -bottom-2 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <a
+            href="#services"
+            className="flex flex-col items-center text-gray-400 hover:text-nanosoft-primary transition-colors"
+            aria-label="تعرف على المزيد"
+          >
+            <span className="text-xs md:text-sm mb-1 md:mb-2">
+              تعرف على المزيد
+            </span>
+            <svg
+              className="w-5 h-5 md:w-6 md:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
         </div>
-      </motion.div>
-    </div>
-  </div>
-
-  {/* Indicateur de défilement */}
-  <div 
-    className="absolute -bottom-2 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
-    role="navigation"
-    aria-label="الانتقال إلى القسم التالي"
-  >
-    <a
-      href="#services"
-      className="flex flex-col items-center text-gray-400 hover:text-nanosoft-primary transition-colors"
-      aria-label="الانتقال إلى قسم الخدمات"
-    >
-      <span className="text-xs md:text-sm mb-1 md:mb-2">تعرف على المزيد</span>
-      <svg
-        className="w-5 h-5 md:w-6 md:h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
-    </a>
-  </div>
-</section>
+      </section>
 
       {/* Section Logos Clients */}
       <LogosSection brands={brands} />
 
       {/* Section Services */}
-      <section id="services-items" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

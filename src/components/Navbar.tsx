@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -29,7 +27,9 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-  const [activeMobileCategory, setActiveMobileCategory] = useState<string | null>(null);
+  const [activeMobileCategory, setActiveMobileCategory] = useState<
+    string | null
+  >(null);
   const location = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -81,7 +81,9 @@ const Navbar: React.FC = () => {
   };
 
   const toggleMobileCategory = (category: string) => {
-    setActiveMobileCategory(activeMobileCategory === category ? null : category);
+    setActiveMobileCategory(
+      activeMobileCategory === category ? null : category
+    );
   };
 
   const solutionLinks = [
@@ -146,7 +148,8 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: "الرئيسية", path: "/" },
     { name: "الأسعار", path: "/pricing" },
-    { name: "المدونة", path: "/blog" },
+    // { name: "المدونة", path: "/blog" },
+    { name: "المدونة", path: "https://nanosoft.ly/blog", external: true },
     { name: "اتصل بنا", path: "/contact" },
   ];
   const desktopNavLinks = navLinks.filter((link) => link.path !== "/pricing");
@@ -194,7 +197,9 @@ const Navbar: React.FC = () => {
                   to="/pricing"
                   className={cn(
                     "text-base font-medium transition-colors duration-200 hover:text-nanosoft-primary",
-                    location.pathname === "/pricing" ? "text-nanosoft-primary" : "text-gray-700"
+                    location.pathname === "/pricing"
+                      ? "text-nanosoft-primary"
+                      : "text-gray-700"
                   )}
                 >
                   الأسعار
@@ -202,7 +207,7 @@ const Navbar: React.FC = () => {
               </div>
 
               <div className="flex items-center space-x-8">
-                {desktopNavLinks.map((link) => (
+                {/* {desktopNavLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
@@ -214,7 +219,41 @@ const Navbar: React.FC = () => {
                   >
                     {link.name}
                   </Link>
-                ))}
+                ))} */}
+                {desktopNavLinks.map((link) =>
+                  link.external ? (
+                    <a
+                      key={link.path}
+                      href={link.path}
+                      className={cn(
+                        "text-base font-medium transition-colors duration-200 ml-12 hover:text-nanosoft-primary",
+                        location.pathname === link.path
+                          ? "text-nanosoft-primary"
+                          : "text-gray-700"
+                      )}
+                      rel="noopener noreferrer"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={cn(
+                        "text-base font-medium transition-colors duration-200 ml-12 hover:text-nanosoft-primary",
+                        location.pathname === link.path
+                          ? "text-nanosoft-primary"
+                          : "text-gray-700"
+                      )}
+                      aria-current={
+                        location.pathname === link.path ? "page" : undefined
+                      }
+                    >
+                      {link.name}
+                    </Link>
+                  )
+                )}
+
                 <Link to="/pricing" className="hidden md:block ml-4">
                   <Button
                     asChild
@@ -223,7 +262,11 @@ const Navbar: React.FC = () => {
                       isScrolled ? "bg-nanosoft-primary text-white" : ""
                     )}
                   >
-                    <a target="_blank" href="https://nanosoft.ly/pricing" rel="noopener noreferrer">
+                    <a
+                      target="_blank"
+                      href="https://nanosoft.ly/pricing"
+                      rel="noopener noreferrer"
+                    >
                       ابدأ الآن
                     </a>
                   </Button>
@@ -237,13 +280,21 @@ const Navbar: React.FC = () => {
               className="md:hidden flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-r from-nanosoft-primary to-nanosoft-secondary text-white shadow-md transition-all duration-300 hover:shadow-lg"
               aria-label="Toggle mobile menu"
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </button>
           </div>
 
           {/* Version mobile */}
           {isMobileMenuOpen && (
-            <div className="md:hidden fixed inset-0 top-[72px] bg-white/95 backdrop-blur-md z-50 pb-20 mt-3" role="dialog" aria-modal="true">
+            <div
+              className="md:hidden fixed inset-0 top-[72px] bg-white/95 backdrop-blur-md z-50 pb-20 mt-3"
+              role="dialog"
+              aria-modal="true"
+            >
               <div className="container mx-auto px-4 py-6 bg-white/95">
                 <div className="space-y-1 border-b border-gray-100 pb-4 mb-4">
                   {navLinks.map((link) => (
@@ -257,7 +308,9 @@ const Navbar: React.FC = () => {
                           : "text-gray-800 hover:bg-gray-50"
                       )}
                       onClick={closeMobileMenu}
-                      aria-current={location.pathname === link.path ? "page" : undefined}
+                      aria-current={
+                        location.pathname === link.path ? "page" : undefined
+                      }
                     >
                       <span>{link.name}</span>
                     </Link>
@@ -361,7 +414,9 @@ const Navbar: React.FC = () => {
         >
           <div className="container mx-auto py-10 px-4">
             <div className="flex justify-between items-start mb-8">
-              <h2 className="text-2xl font-bold text-nanosoft-primary">اكتشف حلولنا</h2>
+              <h2 className="text-2xl font-bold text-nanosoft-primary">
+                اكتشف حلولنا
+              </h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div>
@@ -386,7 +441,9 @@ const Navbar: React.FC = () => {
                           <h3 className="text-lg font-bold text-gray-900 group-hover:text-nanosoft-primary mb-2">
                             {system.name}
                           </h3>
-                          <p className="mt-1 text-sm text-gray-600 text-right">{system.description}</p>
+                          <p className="mt-1 text-sm text-gray-600 text-right">
+                            {system.description}
+                          </p>
                         </div>
                       </Link>
                     ))}
@@ -414,7 +471,9 @@ const Navbar: React.FC = () => {
                           <h3 className="text-lg font-bold text-gray-900 group-hover:text-nanosoft-primary mb-2">
                             {service.name}
                           </h3>
-                          <p className="mt-1 text-sm text-gray-600 text-right">{service.description}</p>
+                          <p className="mt-1 text-sm text-gray-600 text-right">
+                            {service.description}
+                          </p>
                         </div>
                       </Link>
                     ))}
@@ -429,3 +488,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
