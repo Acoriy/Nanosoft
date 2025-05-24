@@ -1,17 +1,25 @@
-var history = require("connect-history-api-fallback");
+const express = require('express');
+const path = require('path');
+const prerender = require('prerender-node');
 
-var express = require("express");
-var path = require("path");
-var serveStatic = require("serve-static");
-app = express();
-//add this middleware
-app.use(history());
-// app.use(serveStatic(__dirname))
-app.use(serveStatic(__dirname + "/dist"));
-var port = process.env.PORT || 5000;
-app.listen(port); 
-// console.log('server started '+ port);
-// "build": "vue-cli-service build --fix",
-// rgb(97, 95, 95)
-server.js
-connect-history-api-fallback
+const app = express();
+
+// ضع هنا رمز API الخاص بـ Prerender.io
+prerender.set('prerenderToken', 'ZCXAq5d0p66eW5eaSO3J');
+
+// استخدم Middleware الخاص بـ Prerender
+app.use(prerender);
+
+// استضافة ملفات React المبنية
+app.use(express.static(path.join(__dirname, 'build')));
+
+// كل الطلبات الأخرى ترسل index.html ليتم التعامل معها بواسطة React Router مثلاً
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+// تشغيل السيرفر
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

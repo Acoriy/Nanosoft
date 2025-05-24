@@ -152,12 +152,12 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <Link
-                  to="/https://nanosoft.ly/blog"
+                <a
+                  href="https://nanosoft.ly/blog"
                   className="text-gray-400 hover:text-white transition-colors duration-300"
                 >
                   المدونة
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
@@ -227,7 +227,12 @@ const Footer: React.FC = () => {
                   className="h-5 w-5 text-nanosoft-primary ml-3"
                   aria-hidden="true"
                 />
-                <span className="text-gray-400">918889193 218+</span>
+                <a
+                  href="https://api.whatsapp.com/send?phone=218918889193"
+                  target="_blank"
+                >
+                  <span className="text-gray-400">918889193 218+</span>
+                </a>
               </li>
               <li className="flex items-center">
                 <Mail
