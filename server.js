@@ -1,25 +1,26 @@
+// 1. استيراد الحزم المطلوبة
 const express = require('express');
 const path = require('path');
 const prerender = require('prerender-node');
 
+// 2. إعداد تطبيق Express
 const app = express();
 
-// ضع هنا رمز API الخاص بـ Prerender.io
-prerender.set('prerenderToken', 'ZCXAq5d0p66eW5eaSO3J');
+// 3. إعداد مفتاح Prerender.io الخاص بك (يمكنك إنشاؤه من حسابك في prerender.io)
+app.use(
+  prerender.set('prerenderToken', 'ZCXAq5d0p66eW5eaSO3J')
+);
 
-// استخدم Middleware الخاص بـ Prerender
-app.use(prerender);
-
-// استضافة ملفات React المبنية
+// 4. تحديد مسار ملفات React الجاهزة بعد build
 app.use(express.static(path.join(__dirname, 'build')));
 
-// كل الطلبات الأخرى ترسل index.html ليتم التعامل معها بواسطة React Router مثلاً
+// 5. إذا لم يتم إيجاد أي مسار، أعد إرسال index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-// تشغيل السيرفر
+// 6. تشغيل السيرفر
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Serveur exécuté sur le port ${PORT}`);
 });
