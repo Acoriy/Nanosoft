@@ -477,9 +477,6 @@ const WebDevService = () => {
             </Link>
           </div>
         </motion.div>
-        <div>
-          salam
-        </div>
       </section>
     </div>
   );
